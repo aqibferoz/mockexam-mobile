@@ -1,14 +1,112 @@
+
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+
+    <ion-navbar transparent>
+      <ion-title>mock<b>exams</b></ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-grid>
+   
+    <ion-row>
+      <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+      </ion-col>
+      <ion-col ion-col text-left no-padding col-10 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <h1>HAVE A COUPON?</h1>
+          <h4>Just fill coupon number below and unlock the exam</h4>
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row>
+        <!-- <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+        </ion-col> -->
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input class="input1" text-left></ion-input>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input class="input1" text-left></ion-input>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input class="input1" text-left></ion-input>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input class="input1" text-left></ion-input>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input class="input1" text-left></ion-input>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input class="input1" text-left></ion-input>
+        </ion-col>
+      </ion-row><br><br>
+
+      <ion-row>
+          <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+          <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <button class="btn1" ion-button (click)= "resetPassword()" >Add Coupon</button>
+          </ion-col>
+          <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            
+            </ion-col>
+            </ion-row>
+            
+            
+
+  </ion-grid>
+
+  <hr>
+
+  <ion-grid>
+    <ion-row>
+        <ion-col ion-col text-left no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <h5>Bookmarked MCQs:0</h5>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-3 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            
+      
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 id="col">
+            
+            <h5>Reshuffle MCQs</h5>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+
+  <hr>
+
+  <ion-grid style="text-align:center !important;">
+   <br>
+      <ion-row>
+        
+        <ion-col ion-col text-left no-padding col-12 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <h1 id="heading">Revision Area</h1>
+            <h4>MCQs that you bookmark will appear here for you to revise</h4>
+        </ion-col>
+      </ion-row>
+</ion-grid>  
+
 </ion-content>

@@ -1,0 +1,1179 @@
+ //////////////////////////////////////////////////
+
+// Theme: Ionic 3 / Angular 6 UI Theme / Template App - Multipurpose Starter App - Gradient Blue Light
+// Web Site: https://csform.com/
+// Author: CSFORM
+// Email support:  dev@csform.com
+
+//////////////////////////////////////////////////
+/* # Global Font Family Section
+/* # Global Font Size Section
+/* # Settings Size Avatar Section
+/* # Settings Size Thumbnail Section
+/* # Global Colors Section
+/* # Global Opacity Section
+/* # Global Function to print color Section
+/* # Global Settings Color Google Card Page
+/* # Global Settings Color Sticky List Header
+/* # Global Settings Color Login Page
+/* # Global Settings Wizard Color
+/* # Global Settings Color Parallax Page
+/* # Global Settings Gallery Color
+/* # Global Settings Search Color
+/* # Global Settings Maps Color
+/* # Global Settings Image Filetr Section
+/* # Settings Header Animation Section
+/* # Settings List Item Section
+/* # Settings Background Ionic App Section
+/* # Settings Divider Section
+/* # Settings Border Radius Section
+/* # Settings Color and Size Icon Section
+/* # Settings Span Section
+/* # Settings Header Section
+/* # LIST VIEWS - Item Parameters Section
+/* # LIST VIEWS - Subitem Parameters Section
+/* # Settings Button Section
+/* # Settings Badges Section
+/* # Settings Login and Register Section
+/* # Settings Google Cards Section
+/* # Settings Swipe Section
+/* # Settings Parallax Section
+/* # Settings Gallery Section
+/* # Settings Checkbox Section
+/* # Settings Wizard Section
+/* # Settings text-input Section
+/* # Settings Tabs Section
+/* # Settings Search Bar Section
+/* # Radio Settings Section
+/* # Toggle Settings Section
+/* # Settings Action Sheet Section
+/* # Settings Google Maps Section
+/* # Settings Settings Divider Background Section
+/* # Settings Toolbar Section
+/* # Settings Alert Message Section
+/* # Settings Color Select
+/* # Settings Range
+/* # Settings Segment Button
+/* # Default Overview Ionic
+//////////////////////////////////////////////////
+
+/* # Global Font Family Section
+================================================
+================================================*/
+$font-family-md-base: "Hind", sans-serif;
+$font-family-ios-base: "Hind", sans-serif;
+
+/* # Global Font Size Section
+================================================
+================================================*/
+$h1-font-size: 24px;
+$h2-font-size: 20px;
+$h3-font-size: 17px;
+$h4-font-size: 16px;
+$h5-font-size: 15px;
+$h6-font-size: 12px;
+$text-font-size: 14px;
+
+
+/* # Global Colors Section
+================================================
+================================================*/
+$palettes: (
+    // Also used for backgrounds.
+    mainColors: (
+      primary : #F1F1F1,
+      primaryBase: #FFFFFF,
+      secondary: #FBFBFB,
+      secondaryBase: #BFC1C7,
+      accent : #2ABDCE,
+      accentBase: #4D4D4D,
+      accentLight : #7F8490,
+      borderColor: #C7C7CC,
+      toolbarback: #000000
+    ),
+    // Used for text colors in all screens
+    textColors: (
+      primary: #FFFFFF,
+      secondary: #8E8E93,
+      accent : #2ABDCE,
+      secondaryBase: #7F8490,
+      accentLight: #30384C,
+      secondaryLight: #95989A,
+      secondaryDark: #4D4D4D,
+      Dark: rgb(12, 11, 11)
+    ),
+    // Used for gradient
+    gradient: (
+        // Blue color combination
+        primary : #f85032,
+        primaryBase : #2abece,
+        // Green color combination
+        secondary: #ffffff,
+        secondaryBase: #57ac30,
+    )
+);
+
+/* # Global Opacity Section
+================================================
+================================================*/
+$global-opacity: (
+    'opacity0': 0,
+    'opacity10': 0.1,
+    'opacity20': 0.2,
+    'opacity30': 0.3,
+    'opacity40': 0.4,
+    'opacity50': 0.5,
+    'opacity60': 0.6,
+    'opacity80': 0.8,
+    'opacity90': 0.9,
+    'opacity100': 1
+);
+
+/* # Global Function to print color Section
+================================================
+================================================*/
+@function theme-colors($name: 'mainColors', $variant: 'primary', $opacity: 1) {
+    // Get the color spectrum
+    $color-spectrum: map-get($palettes, $name);
+    // Get the color variant
+    $color: map-get($color-spectrum, $variant);
+    // Get the alpha setting
+    $alpha: if(type-of($opacity)=='number', $opacity, map-get($global-opacity, $opacity));
+    // Set the alpha of the color
+    @if $alpha {
+        $color: rgba($color, $alpha);
+    }
+    @return $color;
+}
+
+$colors: (
+  primary : theme-colors('mainColors', 'accent'),
+  secondary : theme-colors('textColors', 'secondary'),
+  primaryBase: theme-colors('textColors', 'secondaryDark'),
+  secondaryBase: theme-colors('mainColors', 'secondaryBase'),
+);
+
+/* # Global Function Settings Gradient
+================================================
+================================================*/
+
+// Settings Gradient Blue
+@mixin gradient-primary  {
+  background: theme-colors('gradient', 'secondary', 'opacity0');
+  background: -moz-linear-gradient(top, theme-colors('gradient', 'primary', 'opacity0') 0%, theme-colors('gradient', 'primaryBase', 'opacity100') 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, theme-colors('gradient', 'primary', 'opacity0')), color-stop(100%, theme-colors('gradient', 'primaryBase', 'opacity100')));
+  background: -webkit-linear-gradient(top, theme-colors('gradient', 'primary', 'opacity0') 0%, theme-colors('gradient', 'primaryBase', 'opacity100') 100%);
+  background: -o-linear-gradient(top, theme-colors('gradient', 'primary', 'opacity0') 0%, theme-colors('gradient', 'primaryBase', 'opacity100') 100%);
+  background: -ms-linear-gradient(top, theme-colors('gradient', 'primary', 'opacity0') 0%, theme-colors('gradient', 'primaryBase', 'opacity100') 100%);
+  background: linear-gradient(to bottom, theme-colors('gradient', 'primary', 'opacity0') 0%, theme-colors('gradient', 'primaryBase', 'opacity100') 100%);
+}
+
+// Settings Gradient Green
+@mixin gradient-secondary  {
+  background: theme-colors('gradient', 'secondary', 'opacity0');
+  background: -moz-linear-gradient(top, theme-colors('gradient', 'secondary', 'opacity0') 0%, theme-colors('gradient', 'secondaryBase', 'opacity100') 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, theme-colors('gradient', 'secondary', 'opacity0')), color-stop(100%, theme-colors('gradient', 'secondaryBase', 'opacity100')));
+  background: -webkit-linear-gradient(top, theme-colors('gradient', 'secondary', 'opacity0') 0%, theme-colors('gradient', 'secondaryBase', 'opacity100') 100%);
+  background: -o-linear-gradient(top, theme-colors('gradient', 'secondary', 'opacity0') 0%, theme-colors('gradient', 'secondaryBase', 'opacity100') 100%);
+  background: -ms-linear-gradient(top, theme-colors('gradient', 'secondary', 'opacity0') 0%, theme-colors('gradient', 'secondaryBase', 'opacity100') 100%);
+  background: linear-gradient(to bottom, theme-colors('gradient', 'secondary', 'opacity0') 0%, theme-colors('gradient', 'secondaryBase', 'opacity100') 100%);
+}
+
+/* # Settings Size Avatar Section
+================================================
+================================================*/
+$item-md-avatar-size: 72px;
+$item-ios-avatar-size: 72px;
+
+// Avatar Radius
+ion-avatar img {
+  border: 4px solid theme-colors('mainColors', 'primaryBase');
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16) !important;
+  margin: 5px 0;
+  overflow: visible;
+}
+
+/* # Settings Size Thumbnail Section
+================================================
+================================================*/
+$item-md-thumbnail-size: 120px;
+$item-ios-thumbnail-size: 120px;
+
+
+/* # Global Settings Color Google Card Page
+================================================
+================================================*/
+$googleCard: (
+  // Settings Text Colors - Full Images Cards
+  card-title-full-images-cards: theme-colors('textColors', 'secondaryDark'),
+  card-subtitle-full-images-cards: theme-colors('textColors', 'primary'),
+  card-description-full-images-cards: theme-colors('textColors', 'secondaryBase'),
+  // Settings Text Colors - Styled Cards 2
+  card-title-basic: theme-colors('textColors', 'primary'),
+  card-subtitle-basic: theme-colors('textColors', 'secondaryDark'),
+  card-description-basic: theme-colors('textColors', 'secondaryBase'),
+  // Settings Text Colors - Styled Cards 2
+  card-title-secondary-basic: theme-colors('textColors', 'secondaryDark'),
+  card-description-secondary-basic: theme-colors('textColors', 'primary'),
+);
+
+
+/* # Global Settings Color Sticky List Header
+================================================
+================================================*/
+$stickyListHeader: (
+  // Settings Text Colors - Sticky List Header - Post
+  sticky-list-header-title-basic: theme-colors('textColors', 'secondaryDark'),
+  sticky-list-header-subtitle-basic: theme-colors('textColors', 'accentLight'),
+  sticky-list-header-description-basic: theme-colors('textColors', 'secondary'),
+);
+
+/* # Global Settings Color Login Page
+================================================
+================================================*/
+$loginPage: (
+  // Settings Title Color - Login + logo 1
+  login-title-logo-1: theme-colors('textColors', 'secondaryDark'),
+  // Settings Title Color - Login + logo 2
+  login-title-logo-2: theme-colors('textColors', 'secondaryDark'),
+);
+
+/* # Global Settings Color Register Page
+================================================
+================================================*/
+$register: (
+  // Settings Title Color - Register + logo
+  register-logo-title: theme-colors('textColors', 'secondaryDark'),
+  // Settings Title Color - Register + image
+  register-image-title:theme-colors('textColors', 'accent'),
+);
+
+/* # Global Settings Wizard Color
+================================================
+================================================*/
+$wizardPage: (
+  // Settings Text Colors - Wizard - Simple + image
+  wizard-title-simple-image: theme-colors('textColors', 'secondaryDark'),
+  wizard-description-simple-image: theme-colors('textColors', 'secondaryDark'),
+  // Settings Text Colors - Wizard - Big Image
+  wizard-title-big-image: theme-colors('textColors', 'secondaryDark'),
+  wizard-subtitle-big-image: theme-colors('textColors', 'secondaryDark'),
+  wizard-description-big-image: theme-colors('textColors', 'secondaryDark'),
+  // Settings Text Colors - Wizard - Big Image + Text
+  wizard-title-big-image-text: theme-colors('textColors', 'primary'),
+  wizard-subtitle-big-image-text: theme-colors('textColors', 'primary'),
+);
+
+/* # Global Settings Color Parallax Page
+================================================
+================================================*/
+$parallaxPage: (
+  // Settings Text Colors - Parallax - New List
+  parallax-title-basic: theme-colors('textColors', 'primary'),
+  parallax-subtitle-basic: theme-colors('textColors', 'primary'),
+  parallax-description-basic: theme-colors('textColors', 'accentLight'),
+  // Settings Text Colors - Parallax - Profile
+  parallax-title-profile: theme-colors('textColors', 'primary'),
+  parallax-subtitle-profile: theme-colors('textColors', 'primary'),
+  // Settings Text Colors - Parallax - Product
+  parallax-title-product: theme-colors('textColors', 'primary'),
+  parallax-subtitle-product: theme-colors('textColors', 'primary'),
+  // Settings Text Colors - Parallax - News
+  parallax-category-news: theme-colors('textColors', 'primary'),
+  parallax-title-news: theme-colors('textColors', 'primary'),
+  parallax-subtitle-news: theme-colors('textColors', 'secondaryDark'),
+);
+
+/* # Global Settings Gallery Color
+================================================
+================================================*/
+$imageGallery: (
+  // Settings Text Colors - Gallery - Full gallery 1
+  full-gallery-1-title: theme-colors('textColors', 'primary'),
+  full-gallery-1-subtitle: theme-colors('textColors', 'primary'),
+  // Settings Text Colors - Gallery - Full gallery 2
+  full-gallery-2-title: theme-colors('textColors', 'primary'),
+  full-gallery-2-subtitle: theme-colors('textColors', 'primary'),
+);
+
+/* # Global Settings Search Color
+================================================
+================================================*/
+$searchPage: (
+  // Settings Title Color - Search-bar - Field + header
+  search-title-field-header-1: theme-colors('textColors', 'secondaryBase'),
+  // Settings Title Color - Search-bar - Field + header 2
+  search-title-field-header-2: theme-colors('textColors', 'secondaryBase'),
+);
+
+/* # Global Settings Maps Color
+================================================
+================================================*/
+$mapsPage: (
+  // Settings Text Colors - Maps -  GMAPS + Location  Details
+  maps-title-1: theme-colors('textColors', 'secondaryDark'),
+  maps-description-title-1: theme-colors('textColors', 'secondaryDark'),
+  maps-description-1: theme-colors('textColors', 'secondaryDark'),
+  maps-info-description-1: theme-colors('textColors', 'secondaryDark'),
+  // Settings Text Colors - Maps -   GMAPS + About Us
+  maps-title-2: theme-colors('textColors', 'secondaryDark'),
+  maps-description-title-2: theme-colors('textColors', 'secondaryDark'),
+  maps-description-2: theme-colors('textColors', 'secondaryDark'),
+  maps-info-description-2: theme-colors('textColors', 'secondaryDark'),
+);
+
+$buttonActionShit:(
+  // Settings Color - Button Action Shit
+  color-secondary: theme-colors('textColors', 'primary'),
+  color-primary: theme-colors('textColors', 'secondaryDark'),
+);
+
+/* # Global Settings Image Filetr Section
+================================================
+================================================*/
+[images-filter] {
+    mix-blend-mode: luminosity;
+    -webkit-filter: grayscale(100%) contrast(1.2);
+    filter: grayscale(100%) contrast(1);
+}
+
+img {
+    object-fit: cover;
+}
+
+/* # Settings Header Animation Section
+================================================
+================================================*/
+@mixin settingAnimationHeader {
+  // Header off
+  @keyframes headerOff {
+    from {
+      background-color: theme-colors('mainColors', 'primaryBase');
+    }
+
+    to {
+      background-color: transparent;
+    }
+  }
+
+  ion-navbar {
+    background-color: transparent;
+    animation-name: headerOff;
+    animation-duration: 100ms;
+  }
+
+  // Header On
+  @keyframes headerOn {
+    from {
+      background-color: transparent;
+    }
+
+    to {
+      background-color: theme-colors('mainColors', 'primaryBase');
+    }
+  }
+
+  .active {
+    background-color: theme-colors('mainColors', 'primaryBase') !important;
+    animation-name: headerOn;
+    animation-duration: 400ms;
+    box-shadow: 0 5px 11px rgba(0, 0, 0, 0.13) !important;
+    z-index: 999;
+  }
+
+}
+
+/* # Settings List Item Section
+================================================
+================================================*/
+$list-background-color: theme-colors('mainColors', 'primaryBase');
+$list-md-activated-background-color: theme-colors('mainColors', 'primaryBase');
+$list-ios-activated-background-color: theme-colors('mainColors', 'primaryBase');
+$list-md-border-color: theme-colors('mainColors', 'borderColor');
+
+/* # Settings Background Ionic App Section
+================================================
+================================================*/
+//Settings Content for Android
+$background-color: theme-colors('mainColors', 'primary');
+//Settings Content for Ios
+$content-ios-outer-background: theme-colors('mainColors', 'primary');
+
+/* # Settings Divider Section
+================================================
+================================================*/
+$item-divider-small: 1px solid theme-colors('mainColors', 'borderColor') !important;
+$item-divider-medium: 2px theme-colors('mainColors', 'secondary');
+
+[default-item] {
+  margin: 8px 8px !important;
+  width: calc(100% - 16px) !important;
+  border-radius: 8px !important;
+}
+
+$item-divider-large: 4px theme-colors('mainColors', 'secondary');
+[border]::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid theme-colors('mainColors', 'borderColor');
+    left: 16px;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+}
+
+/* # Settings Border Radius Section
+================================================
+================================================*/
+$border-radius: 8px;
+
+ion-thumbnail img {
+    border-radius: $border-radius !important;
+}
+
+/* # Settings Shadows Section
+================================================
+================================================*/
+
+[box-shadow] {
+  box-shadow: 0 5px 11px rgba(0, 0, 0, 0.13) !important;
+  z-index: 999;
+}
+
+/* # Settings Color and Size Icon Section
+================================================
+================================================*/
+$icon-size:( 'icon-small': 17px, 'icon-medium': 22px, 'icon-large': 32px);
+@function icon-size($key: 'icon-small') {
+    @return map-get($icon-size, $key);
+}
+
+[icon-small] {
+    color: theme-colors('textColors', 'accent') !important;
+    font-size: icon-size('icon-small') !important;
+}
+
+[icon-medium] {
+    color: theme-colors('textColors', 'accent') !important;
+    font-size: icon-size('icon-medium') !important;
+}
+
+[icon-large] {
+    color: theme-colors('textColors', 'secondary') !important;
+    font-size: icon-size('icon-large') !important;
+}
+
+/* # Settings Span Section
+================================================
+================================================*/
+$span-size:( 'span-small': 14px, 'span-medium': 15px, 'span-large': 24px);
+@function span-size($key: 'span-small') {
+    @return map-get($span-size, $key);
+}
+[span-small] {
+    color: theme-colors('textColors', 'secondaryLight');
+    font-size: span-size('span-small') !important;
+    line-height: 17px;
+    font-weight: 400;
+}
+
+[span-medium] {
+    color: theme-colors('textColors', 'secondaryBase');
+    font-size: span-size('span-medium') !important;
+    font-weight: 400;
+    line-height: 17px;
+}
+
+[span-large] {
+    color: theme-colors('textColors', 'secondaryDark');
+    font-size: span-size('span-large') !important;
+    line-height: 22px;
+    font-weight: bold;
+}
+
+/* # Settings Header Section
+================================================
+================================================*/
+.header-md::after {
+    background-image: none !important;
+}
+
+[header-section] {
+    background-color: theme-colors('mainColors', 'primaryBase') !important;
+    border-top: none !important;
+
+    ion-label {
+      margin: 13px 0px 5px 0 !important;
+    }
+}
+
+[header-title] {
+    color: theme-colors('textColors', 'accent');
+    font-size: $h2-font-size !important;
+    font-weight: 400 !important;
+    line-height: 24px;
+    margin-bottom: 9px !important;
+    padding-top: 10px;
+}
+
+[header-subtitle] {
+    color: theme-colors('textColors', 'secondary') !important;
+    font-size: $h3-font-size;
+    font-weight: 300;
+}
+
+/* # LIST VIEWS - Item Parameters Section
+================================================
+================================================*/
+[item-title] {
+    color: theme-colors('textColors', 'secondaryDark')!important;
+    font-size: $h2-font-size !important;
+    font-weight: bold !important;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: initial !important;
+}
+
+[item-subtitle] {
+    color: theme-colors('textColors', 'secondaryBase')!important;
+    font-size: $h5-font-size !important;
+    font-weight: 400 !important;
+    line-height: 18px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    word-wrap: initial !important;
+}
+
+/* # LIST VIEWS - Subitem Parameters Section
+================================================
+================================================*/
+[subitem-title] {
+    color: theme-colors('textColors', 'secondaryDark') !important;
+    font-size: $h2-font-size !important;
+    font-weight: bold !important;
+    line-height: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[subitem-subtitle] {
+    color: theme-colors('textColors', 'secondaryBase') !important;
+    font-size: $h3-font-size !important;
+    font-weight: 300 !important;
+    line-height: 18px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* # Settings Button Section
+================================================
+================================================*/
+[default-button] {
+    background-image: linear-gradient(to right bottom, button-gradinet('primary'), button-gradinet('secondary'));
+    color: theme-colors('textColors', 'primary') !important;
+    font-size: $h3-font-size !important;
+    font-weight: 500 !important;
+    padding: 22px !important;
+    letter-spacing: 1px;
+    line-height: 15px;
+    border-radius: 24px !important;
+}
+
+[button-clear] {
+    color: theme-colors('textColors', 'secondaryDark') !important;
+    font-size: $h4-font-size !important;
+    font-weight: 400 !important;
+}
+
+[button-clear-outline] {
+    color: theme-colors('textColors', 'secondary') !important;
+    font-size: $h5-font-size !important;
+    border: 2px solid theme-colors('mainColors', 'accent') !important;
+    padding: 15px 18px !important;
+    font-weight: 300 !important;
+}
+
+[button-action-shit] {
+  border-radius: 50% !important;
+  height: 30px !important;
+  width: 30px;
+  box-shadow: none !important;
+  background: transparent !important;
+  ion-icon {
+    font-size: $h1-font-size;
+    &.ion-md-more:before {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+[button-icon] {
+    background:theme-colors('mainColors', 'primaryBase') !important;
+    color: theme-colors('textColors', 'accent') !important;
+    font-size: $h3-font-size !important;
+    font-weight: 500 !important;
+    height: auto !important;
+    box-shadow: none !important;
+    border-radius: 5px !important;
+    text-transform: capitalize !important;
+    padding: 10px 20px 10px 18px !important;
+}
+
+[button-icon-clear] {
+    background-color: theme-colors('mainColors', 'primaryBase') !important;
+    color: theme-colors('textColors', 'primary') !important;
+    font-size: $h5-font-size !important;
+    border-radius: 5px !important;
+    padding: 20px 15px !important;
+    height: auto !important;
+}
+
+[button-follow] {
+    background-image: linear-gradient(to right bottom, button-gradinet('primary'), button-gradinet('secondary'));
+    font-size: $h5-font-size !important;
+    color: theme-colors('textColors', 'primary');
+    border-radius: 25px !important;
+    font-weight: 400 !important;
+    padding: 12px 15px !important;
+    height: auto !important;
+}
+
+/* # Settings Badges Section
+================================================
+================================================*/
+$badge-font-size: $h3-font-size !important;
+$badge-font-weight: 400;
+ion-badge {
+  border-radius: 24px !important;
+  padding: 10px 15px !important;
+
+  //Badges Settings Dark
+  &[badge-clear] {
+      &.badge {
+        color: theme-colors('textColors', 'secondaryDark');
+        background-color: transparent !important;
+        font-size: $h1-font-size !important;
+        font-weight: bold;
+        line-height: 27px;
+        display: block;
+      }
+  }
+
+  //Badges Settings Light
+  &[badge-light]{
+      &.badge {
+          color: theme-colors('textColors', 'primary');
+          background-image: linear-gradient(to right bottom, button-gradinet('primary'), button-gradinet('secondary'));
+          border: none;
+      }
+  }
+}
+
+/* # Settings Login and Register Section
+================================================
+================================================*/
+[login-title] {
+    font-size: $h1-font-size !important;
+    font-weight: bold !important;
+    line-height: 27px;
+}
+
+[register-title] {
+  font-size: $h1-font-size  !important;
+  font-weight: bold !important;
+  line-height: 27px;
+}
+
+/* # Settings Google Cards Section
+================================================
+================================================*/
+$card-md-margin-bottom: 0px !default;
+$card-ios-margin-bottom: 0px !default;
+$card-md-background-color: theme-colors('mainColors', 'primaryBase');
+$card-ios-background-color: theme-colors('mainColors', 'primaryBase');
+[card-title] {
+    font-size: $h1-font-size !important;
+    font-weight: 400 !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[card-subtitle] {
+    font-size: $h3-font-size !important;
+    font-weight: 400 !important;
+    line-height: 27px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[card-body-text] {
+    font-size: $h5-font-size !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+}
+
+/* Settings Swipe Section
+================================================
+================================================*/
+$item-md-sliding-content-background: theme-colors('mainColors', 'primaryBase');
+
+/* # Settings Parallax Section
+================================================
+================================================*/
+[new-category] {
+  color: theme-colors('textColors', 'primary');
+  display: inline-block;
+  font-size: $h5-font-size;
+  font-weight: 600;
+  line-height: 17px;
+}
+
+[parallax-title] {
+    font-size: $h1-font-size !important;
+    font-weight: bold !important;
+    line-height: 34px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+[parallax-subtitle] {
+    font-size: $h3-font-size !important;
+    font-weight: 400 !important;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[parallax-description] {
+    font-size: $h3-font-size !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+}
+
+/* # Settings Gallery Section
+================================================
+================================================*/
+[gallery-title] {
+    font-size: $h1-font-size !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    word-wrap: initial !important;
+}
+
+[gallery-subtitle] {
+    font-size: $h5-font-size !important;
+}
+
+.gallery-gradient {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4d4d4d+0,ffffff+100&1+0,0+100 */
+  background: -moz-linear-gradient(left, rgba(77,77,77,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(77,77,77,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(77,77,77,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d4d4d', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+/* # Settings Checkbox Section
+================================================
+================================================*/
+// Settings for android
+$checkbox-md-icon-background-color-on: theme-colors('mainColors', 'accent');
+$checkbox-md-icon-background-color-off: theme-colors('mainColors', 'primaryBase');
+$checkbox-md-icon-border-color-off: theme-colors('mainColors', 'accentLight');
+$checkbox-md-icon-border-color-on: transparent;
+$checkbox-md-icon-border-width: 2px;
+$checkbox-md-icon-border-radius: 4px;
+$checkbox-md-icon-size: $h4-font-size;
+$checkbox-md-icon-checkmark-color: theme-colors('mainColors', 'primaryBase');
+// Settings for ios
+$checkbox-ios-background-color-on: theme-colors('mainColors', 'accent');
+$checkbox-ios-background-color-off:  theme-colors('mainColors', 'primaryBase');
+$checkbox-ios-icon-border-color-off: theme-colors('mainColors', 'accentLight');
+$checkbox-ios-icon-checkmark-color: theme-colors('mainColors', 'primaryBase');
+$checkbox-ios-icon-border-color-on: transparent;
+.checkbox-md {
+    .checkbox-icon {
+        height: 20px !important;
+        width: 20px !important;
+    }
+    .checkbox-inner {
+        top: 1px !important;
+        left: 6px !important;
+        width: 6px !important;
+        height: 11px !important;
+    }
+}
+
+/* # Settings Wizard Section
+================================================
+================================================*/
+[wizard-title] {
+    font-size: $h1-font-size !important;
+    font-weight: bold;
+    line-height: 27px;
+}
+
+[wizard-subtitle] {
+  font-size: $h3-font-size !important;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+[wizard-description] {
+    font-size: $h5-font-size !important;
+    font-weight: 300;
+    line-height: 18px;
+}
+
+
+/* # Settings text-input Section
+================================================
+================================================*/
+// Settings for Android
+$text-input-md-highlight-color: transparent !important;
+$text-input-md-highlight-color-valid: transparent !important;
+$text-input-md-background-color: theme-colors('mainColors', 'accent') !important;
+$label-md-text-color: theme-colors('textColors', 'accentLight') !important;
+// Settings for Ios
+$label-ios-text-color: theme-colors('textColors', 'accentLight') !important;
+$text-input-ios-highlight-color: transparent;
+$text-input-ios-highlight-color-valid: transparent !important;
+
+//Settings text-input
+.text-input {
+//   color:  theme-colors('textColors', 'primary');
+  font-size: $h5-font-size;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+/* # Settings Tabs Section
+================================================
+================================================*/
+// Settings for Android
+$tabs-background: theme-colors('mainColors', 'primaryBase');
+$tabs-tab-color-active: theme-colors('textColors', 'secondaryDark');
+$tabs-md-tab-icon-color-active: theme-colors('mainColors', 'accent');
+$tabs-md-tab-text-color-active: theme-colors('mainColors', 'accent');
+$tabs-md-tab-icon-color: theme-colors('textColors', 'secondary');
+$tabs-md-tab-text-color: theme-colors('textColors', 'secondary');
+
+// Settings for Ios
+$tabs-ios-tab-icon-color-active: theme-colors('mainColors', 'accent');
+$tabs-ios-tab-text-color-active: theme-colors('textColors', 'accent');
+$tabs-ios-tab-icon-color: theme-colors('textColors', 'secondary');
+$tabs-ios-tab-text-color: theme-colors('textColors', 'secondary');
+
+/* # Settings Search Bar Section
+================================================
+================================================*/
+// For Android
+$searchbar-md-input-background-color: theme-colors('mainColors', 'primaryBase');
+// $searchbar-md-background-color: theme-colors('mainColors', 'accentBase');
+$searchbar-md-input-placeholder-color: theme-colors('textColors', 'secondaryBase');
+$searchbar-md-input-search-icon-color: theme-colors('textColors', 'secondaryBase');
+$searchbar-md-input-clear-icon-color: theme-colors('textColors', 'secondaryBase');
+$searchbar-md-input-text-color: theme-colors('textColors', 'secondaryBase');
+$searchbar-md-input-border-radius: 25px;
+$searchbar-md-input-box-shadow:  0 8px 14px rgba(0, 0, 0, 0.1)!important;
+// For Ios
+$searchbar-ios-input-background-color: theme-colors('mainColors', 'primaryBase') !important;
+$searchbar-ios-background-color: theme-colors('mainColors', 'primaryBase') !important;
+
+$searchbar-ios-input-placeholder-color: theme-colors('textColors', 'secondaryBase');
+$searchbar-ios-input-search-icon-color: theme-colors('textColors', 'secondaryBase');
+$searchbar-ios-input-clear-icon-color: theme-colors('textColors', 'secondaryBase');
+$searchbar-ios-input-border-radius: 25px;
+
+
+[search-bar-title] {
+    font-size: $h3-font-size !important;
+    font-weight: 400 !important;
+}
+
+/* Radio Settings Section
+================================================
+================================================*/
+// Settings for Android
+$radio-md-color-on: theme-colors('mainColors', 'accent');
+$radio-md-color-off: theme-colors('mainColors', 'accentLight');
+
+// Settings for Ios
+$radio-ios-color-on: theme-colors('mainColors', 'accent');
+$radio-ios-color-off: theme-colors('mainColors', 'accentLight');
+
+/* Toggle Settings Section
+================================================
+================================================*/
+// Settings for Android
+$toggle-md-handle-background-color-on: theme-colors('mainColors', 'primaryBase');
+$toggle-md-handle-background-color-off: theme-colors('mainColors', 'primaryBase');
+$toggle-md-track-background-color-on: theme-colors('mainColors', 'accent');
+$toggle-md-track-background-color-off: theme-colors('mainColors', 'primary');
+// Settings for Ios
+$toggle-ios-handle-background-color: theme-colors('mainColors', 'primaryBase');
+$toggle-ios-track-background-color: theme-colors('mainColors', 'accent') !important;
+$toggle-ios-background-color-off: theme-colors('mainColors', 'primary') !important;
+
+/* Settings Action Sheet Section
+================================================
+================================================*/
+// Settings for Android
+$action-sheet-md-background: theme-colors('mainColors', 'primaryBase');
+$action-sheet-md-button-text-color: theme-colors('textColors', 'secondaryDark');
+$action-sheet-md-button-destructive-text-color: theme-colors('textColors', 'primary');
+$action-sheet-md-button-background: theme-colors('mainColors', 'primaryBase');
+$action-sheet-md-button-background-activated: theme-colors('mainColors', 'primaryBase');
+
+// Settings for Ios
+$action-sheet-ios-background: theme-colors('mainColors', 'primaryBase');
+$action-sheet-ios-button-text-color: theme-colors('textColors', 'secondaryDark');
+$action-sheet-ios-button-destructive-text-color: theme-colors('textColors', 'primary');
+$action-sheet-ios-button-cancel-background: theme-colors('mainColors', 'primaryBase');
+$action-sheet-ios-button-background-activated: theme-colors('mainColors', 'primaryBase');
+
+.action-sheet-selected {
+  background-color: theme-colors('mainColors', 'primaryBase') !important;
+}
+
+/* Settings Google Maps Section
+================================================
+================================================*/
+[maps-title] {
+    font-size: $h1-font-size !important;
+    font-weight: bold !important;
+    line-height: 30px !important;
+}
+
+[map-content] {
+    [maps-description-title] {
+        font-size: $h3-font-size !important;
+        font-weight: 400 !important;
+        line-height: 20px !important;
+    }
+    [maps-description] {
+        font-size: $h5-font-size !important;
+        font-weight: 400 !important;
+        line-height: 18px !important;
+    }
+    [maps-info-description] {
+      font-size: $h3-font-size !important;
+      font-weight: 400 !important;
+      line-height: 19px !important;
+    }
+}
+
+/* Settings Settings Divider Background Section
+================================================
+================================================*/
+// For Android
+$item-md-divider-background: theme-colors('mainColors', 'primaryBase');
+$item-md-divider-color: theme-colors('textColors', 'secondary');
+
+// For Ios
+$item-ios-divider-background: theme-colors('mainColors', 'primaryBase');
+$item-ios-divider-color: theme-colors('textColors', 'secondary');
+
+/* Settings Toolbar Section
+================================================
+================================================*/
+//For Android
+$toolbar-md-title-font-size: $h3-font-size !important;
+$toolbar-md-title-text-color: theme-colors('textColors', 'primary');
+$toolbar-background: theme-colors('mainColors', 'toolbarback');
+
+//For Ios
+$toolbar-ios-title-text-color: theme-colors('textColors', 'primary');
+$toolbar-ios-button-color: theme-colors('textColors', 'primary');
+
+.toolbar {
+    .toolbar-title {
+        font-weight: 400;
+        font-size: 20px !important;
+        margin-top: 10px !important;
+    }
+
+}
+
+/* Settings Alert Message Section
+================================================
+================================================*/
+ //For Android
+$alert-md-title-font-size: $h3-font-size !important;
+$alert-md-message-text-color: theme-colors('mainColors', 'accent') !important;
+$alert-md-input-border-color: theme-colors('mainColors', 'borderColor') !important;
+$alert-md-background-color: theme-colors('mainColors', 'primaryBase');
+
+$alert-md-checkbox-border-color-off: theme-colors('mainColors', 'accentLight');
+$alert-md-checkbox-border-color-on: theme-colors('mainColors', 'accent');
+$alert-md-checkbox-icon-border-color: theme-colors('mainColors', 'primaryBase');
+$alert-md-checkbox-label-text-color: theme-colors('textColors', 'accentLight');
+$alert-md-checkbox-label-text-color-checked: theme-colors('textColors', 'accent');
+
+$alert-md-radio-label-text-color: theme-colors('textColors', 'accentLight');
+$alert-md-radio-label-text-color-checked: theme-colors('textColors', 'accent') !important;;
+
+$alert-md-radio-border-color-off: theme-colors('mainColors', 'accentLight') !important;
+$alert-md-radio-border-color-on: theme-colors('textColors', 'accent') !important;
+
+
+// For Ios
+$alert-ios-title-font-size: $h3-font-size !important;
+$alert-ios-message-text-color: theme-colors('textColors', 'secondaryBase') !important;
+$alert-ios-input-border-color: theme-colors('mainColors', 'borderColor') !important;
+$alert-ios-background: theme-colors('mainColors', 'primaryBase');
+
+$alert-ios-checkbox-border-color-off: theme-colors('mainColors', 'accentLight');
+$alert-ios-checkbox-border-color-on: theme-colors('mainColors', 'accent');
+$alert-ios-checkbox-icon-border-color: theme-colors('mainColors', 'primaryBase');
+$alert-ios-checkbox-label-text-color: theme-colors('textColors', 'accentLight');
+$alert-ios-checkbox-label-text-color-checked: theme-colors('textColors', 'accent');
+
+$alert-ios-radio-border-color-off: theme-colors('mainColors', 'accentLight') !important;
+$alert-ios-radio-border-color-on: theme-colors('textColors', 'accent') !important;
+
+$alert-ios-radio-label-text-color: theme-colors('textColors', 'accentLight');
+$alert-ios-radio-label-text-color-checked: theme-colors('textColors', 'accent') !important;
+
+.alert-title {
+  color: theme-colors('textColors', 'accentLight') !important;
+  font-weight: bold;
+}
+
+.alert-button-group {
+  background: linear-gradient(to right bottom, #a8df63, #71dc87, #39d4a8, #00cac1, #2abdce);
+
+  .alert-button {
+    color: theme-colors('textColors', 'primary') !important;
+  }
+}
+.item-radio {
+  color: theme-colors('textColors', 'accentLight') !important;
+}
+
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: theme-colors('textColors', 'secondary') !important;
+  font-weight: 300 !important;
+
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: theme-colors('textColors', 'secondary') !important;
+    font-weight: 300 !important;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: theme-colors('textColors', 'secondary') !important;
+    font-weight: 300 !important;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: theme-colors('textColors', 'secondary') !important;
+  font-weight: 300 !important;
+}
+
+/* Settings Color Select
+================================================
+================================================*/
+.select-text {
+    color: theme-colors('textColors', 'secondaryBase');
+}
+
+$select-md-icon-color: theme-colors('textColors', 'secondaryBase');
+$select-ios-icon-color: theme-colors('textColors', 'secondaryBase');
+
+/* Settings Range
+================================================
+================================================*/
+// For android
+$range-md-tick-height: 11px;
+$range-md-tick-background-color: theme-colors('mainColors', 'accent');
+$range-md-knob-background-color: theme-colors('mainColors', 'accent')!important;
+$range-md-bar-background-color: theme-colors('mainColors', 'secondaryBase');
+$range-md-bar-height: 2px;
+$range-md-knob-width: 28px;
+$range-md-knob-height: 28px;
+
+// For ios
+$range-ios-tick-height-tick-height: 11px;
+$range-ios-tick-background-color: theme-colors('mainColors', 'accent');
+$range-ios-knob-background-color: theme-colors('mainColors', 'accent') !important;
+$range-ios-pin-color: theme-colors('textColors', 'accent');
+$range-ios-knob-box-shadow: 0 3px 6px rgba(88, 172, 48, 0.36) !important;
+$range-ios-bar-background-color: theme-colors('mainColors', 'secondaryBase');
+$range-ios-bar-height: 2px;
+$range-ios-knob-width: 28px;
+$range-ios-knob-height: 28px;
+
+.range-knob {
+  box-shadow: 0 3px 6px rgba(88, 172, 48, 0.36) !important;
+}
+
+/* Settings Segment Button
+================================================
+================================================*/
+// For android
+$segment-button-md-text-color-activated: theme-colors('textColors', 'accent');
+$segment-button-md-border-color-activated: theme-colors('mainColors', 'accent');
+$segment-button-md-border-bottom-color: transparent;
+$segment-button-md-border-bottom-width: 2px;
+$segment-button-md-font-size: $h5-font-size;
+
+/* Default Overview Ionic
+================================================
+================================================*/
+[has-header] .scroll-content {
+    top: 56px;
+}
+
+//Settings header for IOS
+.platform-ios {
+    [has-header] .scroll-content {
+        top: 64px !important;
+    }
+    .header-ios .toolbar-background-ios {
+        border-color: transparent;
+    }
+}
+
+// Settings ion-reorder
+.item-md ion-reorder,
+.item-ios ion-reorder {
+  opacity: 1 !important;
+}
+ion-reorder {
+    max-width: 50px;
+    border-left: none;
+    background: theme-colors('mainColors', 'secondary') !important;
+
+.ion-md-reorder,
+.ion-ios-reorder,  {
+    color: theme-colors('textColors', 'secondaryDark') !important;
+  }
+
+}
+
+//Background Size
+[background-size] {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+[transparent] {
+    background-color: transparent !important;
+}
+
+[no-margin] {
+    margin: 0 !important;
+}
+
+[no-padding] {
+    padding: 0 !important;
+}

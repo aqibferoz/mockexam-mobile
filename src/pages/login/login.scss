@@ -1,0 +1,42 @@
+page-login {
+    .pad{
+        color: white !important;
+        margin: 25px !important;
+    }
+    h1{
+        color:white !important;
+    }
+    label{
+        font-size: 17px !important;
+        color: white;
+    }
+   ion-icon{
+       color:white !important;
+       font-size: 20px;
+   }
+   .input{
+       color: white !important;
+   }
+   .forgot{
+       color: white !important;
+       font-weight: bold;
+       font-size: 15px;
+   }
+   .btn{
+       background-color: white;
+       color: #5F43AB !important;
+       border-radius: 8px !important;
+       font-weight: bold !important;
+   }
+   .btn1{
+       background-color: #5F43AB;
+       border-radius: 8px !important;
+       border-color: white !important;
+       border: 1px solid white;
+       
+   }
+   hr{
+       background-color: white !important;
+       opacity: 0.2 !important;
+   }
+}

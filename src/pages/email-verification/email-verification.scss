@@ -1,0 +1,38 @@
+page-email-verification {
+    ion-content{
+        background-color: #F4F4F4 !important;
+    }
+    ion-header{
+        background-color: #5F43AB !important;
+        height: 60px;
+    }
+    p{
+        font-size: 16px;
+        font-weight: 100;
+        text-align: justify;
+    }
+    .input{
+        color:black !important;
+        ::placeholder{
+            color: #5F43AB !important;
+        }
+    }
+    .btn1{
+        background-color: #F4F4F4;
+        border-radius: 8px !important;
+        border-color: #5F43AB !important;
+        border: 1px solid white;
+        color:#5F43AB !important; 
+    }
+    .input1{
+        border-bottom: 1px solid #5F43AB;
+    }
+    .input2{
+        border-bottom: 1px solid #5F43AB;
+    }
+    a{
+        color: #5F43AB !important;
+        font-size: 17px;
+        font-weight: bold;
+    }
+}

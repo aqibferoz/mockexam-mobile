@@ -1,0 +1,47 @@
+page-reqest-exam {
+    ion-content{
+        background-color: #F4F4F4 !important;
+    }
+    ion-header{
+        background-color: #5F43AB !important;
+        height: 60px;
+    }
+    .title{
+        text-align: center !important;
+    }
+    h1{
+        text-align: center !important;
+    }
+    .row{
+        padding-bottom: -10px !important;
+    }
+   
+    .row{
+        text-align: center !important;
+    }
+    ion-grid{
+        background-color: #F4F4F4 !important;
+
+    }
+    .input{
+        color:black !important;
+    }
+    .btn1{
+        background-color: #F4F4F4;
+        border-radius: 8px !important;
+        border-color: #5F43AB !important;
+        border: 1px solid white;
+        color:#5F43AB !important;
+        
+    }
+    p{
+        margin-top: -2px !important;
+        font-size: 17px !important;
+    }
+    #para{
+        margin-top: -2px !important;
+    }
+    .input{
+        font-size: 10px !important;
+    }
+}

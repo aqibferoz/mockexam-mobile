@@ -1,0 +1,43 @@
+page-email-verification-success {
+    ion-content{
+        background-color: #F4F4F4 !important;
+    }
+    ion-header{
+        background-color: #5F43AB !important;
+        height: 60px;
+    }
+    .title{
+        text-align: center !important;
+    }
+    p{
+        font-size: 16px;
+        font-weight: 100;
+        text-align: justify;
+    }
+    .row{
+        padding-bottom: -10px !important;
+    }
+    #p{
+        font-size: 26px;
+        font-weight: 100;
+        text-align: center !important;
+        margin-top: 2px !important;
+    }
+    .row{
+        text-align: center !important;
+    }
+    ion-grid{
+        background-color: #F4F4F4 !important;
+
+    }
+    .input{
+        color:black !important;
+    }
+    .btn1{
+        background-color: #5F43AB;
+        border-radius: 8px !important;
+        border: 1px solid white;
+        color: white !important;
+        
+    }
+}

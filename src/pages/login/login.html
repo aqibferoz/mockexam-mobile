@@ -1,0 +1,138 @@
+<ion-header>
+
+  
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row>
+            <!-- Big Images Header -->
+            <!-- <ion-col no-padding col-12 background-size [ngStyle]="{'background-image': 'url(' + data.background + ')'}">
+            </ion-col> -->
+            <ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <div form>
+              <!-- Header Title -->
+              <h1 class="pad">mock<b>exams</b></h1>
+              <ion-row>
+                  <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      
+                    </ion-col>
+                <ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <ion-icon name="logo-google" style="font-size: 25px;"></ion-icon>
+                </ion-col>
+                <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      
+                  </ion-col>
+                <ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <ion-icon name="logo-facebook" style="font-size: 25px;"></ion-icon>
+                </ion-col>
+                <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      
+                  </ion-col>
+              </ion-row><br>
+              <ion-row>
+                  <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      
+                    </ion-col>
+                <ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <label>Connect with Google</label>
+                </ion-col>
+                <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      
+                  </ion-col>
+                <ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <label>Connect with Facebook</label>
+                </ion-col>
+                <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      
+                  </ion-col>
+              </ion-row><br>
+              <hr>
+              <br>
+              <br>
+              <ion-row>
+                <ion-col  text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+                </ion-col>
+                <ion-col  text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <ion-icon name="mail"></ion-icon>
+                   <label>Or use your email address</label>
+                  </ion-col>
+                  <ion-col  text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+                    </ion-col>
+              </ion-row><br><br><br>
+                <!--Form-->
+                  
+                  <ion-item text-center style="background-color:#5F43AB !important">
+                    <!---Input field email-->
+                    
+                    <ion-input class="input" text-left  type="email" placeholder="EMAIL" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"></ion-input>
+                    
+                </ion-item><br>
+                <ion-item text-center style="background-color:#5F43AB !important">
+                    <!---Input field email-->
+                    
+                    <ion-input class="input" text-left  type="password" placeholder="PASSWORD"></ion-input>
+                    
+                </ion-item><br>
+                <ion-row>
+                    <ion-col ion-col text-right no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                        
+                      </ion-col>
+                      <ion-col ion-col text-right no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                          
+                        </ion-col>
+                  <ion-col ion-col text-right no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <a class="forgot" (click)="ClickToForgotPage()">Forgot?</a>
+                  </ion-col>
+                </ion-row><br>
+                  
+                  
+                <!---Register button-->
+                  <ion-row>
+                  <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+                  </ion-col>
+                  <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <button class="btn" ion-button block default-button text-capitalize box-shadow (click)="ClickToLogin()">LOGIN</button>
+                  </ion-col>
+                  <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    
+                    </ion-col>
+                    </ion-row><br>
+                    <hr>
+                    
+                    </div><br>
+                    
+              <ion-grid>
+                <ion-row>
+                  <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    
+                  </ion-col>
+                  <ion-col ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                   <label>Don't have an account?</label>
+                  </ion-col>
+                  <ion-col ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                   
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+    
+                    </ion-col>
+                    <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <button class="btn1" ion-button block default-button text-capitalize box-shadow (click)="ClickToRegister()">CREATE ACCOUNT</button>
+                    </ion-col>
+                    <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      
+                      </ion-col>
+                      </ion-row>
+              </ion-grid>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>
