@@ -17,6 +17,18 @@ import { ForgotPasswordPageModule } from '../pages/forgot-password/forgot-passwo
 import { ReqestExamPageModule } from '../pages/reqest-exam/reqest-exam.module';
 import { EmailVerificationPageModule } from '../pages/email-verification/email-verification.module';
 import { EmailVerificationSuccessPageModule } from '../pages/email-verification-success/email-verification-success.module';
+import { HomeExamsPageModule } from '../pages/home-exams/home-exams.module';
+import { AddCouponPageModule } from '../pages/add-coupon/add-coupon.module';
+import { BalanceTransactionsPageModule } from '../pages/balance-transactions/balance-transactions.module';
+import { ExamsHistoryPageModule } from '../pages/exams-history/exams-history.module';
+import { ExamPreferencesPageModule } from '../pages/exam-preferences/exam-preferences.module';
+import { ReportPageModule } from '../pages/report/report.module';
+import { SignOutPageModule } from '../pages/sign-out/sign-out.module';
+import { AddBalancePageModule } from '../pages/add-balance/add-balance.module';
+import { BankTransferPageModule } from '../pages/bank-transfer/bank-transfer.module';
+import { BankInformationPageModule } from '../pages/bank-information/bank-information.module';
+import { SuggestCorrectionPageModule } from '../pages/suggest-correction/suggest-correction.module';
+import { EasypayWalletPageModule } from '../pages/easypay-wallet/easypay-wallet.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +47,18 @@ import { EmailVerificationSuccessPageModule } from '../pages/email-verification-
     ReqestExamPageModule,
     EmailVerificationPageModule,
     EmailVerificationSuccessPageModule,
+    HomeExamsPageModule,
+    AddCouponPageModule,
+    BalanceTransactionsPageModule,
+    ExamsHistoryPageModule,
+    ExamPreferencesPageModule,
+    ReportPageModule,
+    SignOutPageModule,
+    AddBalancePageModule,
+    BankTransferPageModule,
+    BankInformationPageModule,
+    SuggestCorrectionPageModule,
+    EasypayWalletPageModule,
 
     FormsModule,
     IonicModule.forRoot(MyApp)

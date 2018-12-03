@@ -1,0 +1,128 @@
+page-add-coupon {
+    ion-content{
+        background-color: #F4F4F4 !important;
+    }
+    ion-header{
+        background-color: #5F43AB !important;
+        height: 65px;
+    }
+    ion-toolbar{
+        background-color: #5F43AB !important;
+        color: white !important;
+        text-align: center !important;
+    }
+    ion-icon{
+        font-size: 28px !important;
+        font-weight: 500 !important;
+        color:  white !important;
+        margin-top: 15px !important;
+    }
+    .back-button.show-back-button{
+        display: none !important;
+    }
+    p{
+        font-size: 16px;
+        font-weight: 100;
+        text-align: justify;
+    }
+    .input{
+        color:black !important;
+        ::placeholder{
+            color: #5F43AB !important;
+        }
+    }
+    .btn1{
+        text-align: center !important;
+        width:150px !important;
+        background-color: #5F43AB;
+        border-radius: 8px !important;
+        color:white !important; 
+    }
+    .input1{
+        border-bottom: 1px solid #5F43AB;
+    }
+    .input2{
+        border-bottom: 1px solid #5F43AB;
+    }
+    a{
+        color: #5F43AB !important;
+        font-size: 17px;
+        font-weight: bold;
+    }
+    h1{
+        text-align: center !important;
+        color: #5F43AB !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+    }
+    #h1{
+        color: black !important;
+        font-weight: 100 !important;
+
+
+    }
+    h4{
+        font-size: 12px !important;
+    }
+    hr{
+        height: 2px !important;
+    }
+    #heading{
+        color: grey !important;
+        text-align: center !important;
+
+    }
+    h5{
+        color: #5F43AB !important;
+        font-size: 12px !important;
+    }
+    h3{
+        margin-left:  -0.8em  !important;
+        text-align: left !important;
+
+    }
+    ion-card{
+        border-radius: 15px !important;
+        height: 135px !important;
+    }
+    ion-card-title{
+        margin-top: -1em !important;
+    }
+    #card-p{
+        word-spacing: normal !important; 
+        text-align: left !important;
+        margin-left:  -0.8em  !important;
+        margin-top: -0.8em  !important;
+        font-size: small !important;
+   }
+    #img{
+        margin-top: -4px !important;
+        height: 100px !important;
+    }
+    #paragraph{
+        word-spacing: normal !important; 
+        text-align: center !important;
+    
+       }
+       .btn2{
+           text-align: center !important;
+           width: 280px !important;
+        background-color: #5F43AB !important;
+        border-radius: 8px !important;
+        color:white !important;
+        font-weight: 400 !important;
+        
+    }hr{
+        height: 2px !important;
+        width: 100% !important;
+    
+       }
+     
+    // ion-avatar{
+    //     margin: auto !important;
+    // }
+    #name{
+        background-color: #5F43AB !important;
+    }
+   
+}

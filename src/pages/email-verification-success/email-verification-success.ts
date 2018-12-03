@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EmailVerificationPage } from '../email-verification/email-verification';
 
 /**
  * Generated class for the EmailVerificationSuccessPage page.
@@ -21,5 +22,8 @@ export class EmailVerificationSuccessPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad EmailVerificationSuccessPage');
   }
+  goBack(){
+    this.navCtrl.push(EmailVerificationPage);
 
+  }
 }

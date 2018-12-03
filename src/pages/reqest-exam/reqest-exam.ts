@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ExamsPage } from '../exams/exams';
 
 /**
@@ -16,7 +16,7 @@ import { ExamsPage } from '../exams/exams';
 })
 export class ReqestExamPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -24,5 +24,33 @@ export class ReqestExamPage {
   }
   ClickToExamsPage(){
     this.navCtrl.push(ExamsPage)
+  }
+  popUp() {
+    let alert = this.alertCtrl.create();
+    alert.setTitle('Exam Category');
+
+    alert.addInput({
+      type: 'radio',
+      label: 'Medical',
+      value: 'blue',
+      checked: true
+    });
+
+    alert.addInput({
+      type: 'radio',
+      label: 'Engineering',
+      value: 'blue',
+      // checked: true
+    });
+
+  
+    alert.addButton({
+      text: 'Okay!',
+      handler: data => {
+        // this.testRadioOpen = false;
+        // this.testRadioResult = data;
+      }
+    });
+    alert.present();
   }
 }

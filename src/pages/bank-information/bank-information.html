@@ -1,0 +1,136 @@
+
+<ion-header>
+
+    <ion-navbar transparent>
+        <ion-icon name="arrow-round-back" (click) = "goBack()"></ion-icon>
+          <ion-title>Bank <b>Information</b></ion-title>
+      </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+      <ion-grid>
+     
+          <ion-row>
+            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      
+            </ion-col>
+            <ion-col ion-col text-left no-padding col-10 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <h3>Please provide the details of your bank account so that we can add balance to your mockexams account.</h3>
+            </ion-col>
+          </ion-row>
+
+
+      
+            <!-- <ion-row>
+                <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        
+                </ion-col>
+                <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <button class="btn1" ion-button (click)= "Proceed()" >Proceed</button>
+                </ion-col>
+                <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  
+                  </ion-col>
+                  </ion-row> -->
+                  
+                  <br>
+      
+        </ion-grid>
+
+        <ion-grid>
+          <ion-row>
+              <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        
+                </ion-col>
+                <ion-col ion-col text-center no-padding col-10 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <ion-item text-center>
+                        <!---Input field email-->
+                        
+                        <ion-input class="input" text-left  type="text" placeholder="BANK NAME"(click) = "popUp()"></ion-input>
+                        
+                    </ion-item><br>
+                    <ion-item text-center>
+                        <!---Input field email-->
+                        
+                        <ion-input class="input" text-left  type="number" placeholder="ACCOUNT TITLE"></ion-input>
+                        
+                    </ion-item><br>
+
+
+
+                    <ion-label>ACCOUNT NUMBER</ion-label>
+
+                    <ion-row>
+                        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  
+                        </ion-col>
+                        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                          
+                            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
+                        </ion-col>
+                        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  
+                          </ion-col>
+                        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
+                        </ion-col>
+                        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  
+                          </ion-col>
+                        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
+                        </ion-col>
+                        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  
+                          </ion-col>
+                        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
+                        </ion-col>
+                        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  
+                          </ion-col>
+                        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
+                        </ion-col>
+                        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  
+                          </ion-col>
+                        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
+                        </ion-col>
+                      </ion-row><br><br>
+
+
+
+
+
+                  </ion-col>
+                  <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        
+                    </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+
+                 <ion-grid>
+
+                 
+                     <ion-row>
+                <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        
+                </ion-col>
+                <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <button class="btn1" ion-button (click)= "goBankTransferPage()" >Save Details</button>
+                </ion-col>
+                <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  
+                  </ion-col>
+                  </ion-row>
+                 </ion-grid>
+    
+      
+  </ion-content>
+  

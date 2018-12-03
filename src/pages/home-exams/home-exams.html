@@ -1,0 +1,408 @@
+
+<ion-header>
+
+    <ion-navbar transparent>
+      <ion-title>mock<b>exams</b></ion-title>
+      
+    </ion-navbar>
+    <br>
+    <!-- <ion-toolbar> -->
+    <ion-segment [(ngModel)]="requests">
+
+        <ion-segment-button value="home">
+          Home
+        </ion-segment-button>
+        
+        <ion-segment-button value="exams">
+          Exams
+        </ion-segment-button>
+    
+        <ion-segment-button value="profile">
+          Profile
+        </ion-segment-button>
+    
+      </ion-segment>
+    <!-- </ion-toolbar> -->
+  </ion-header>
+
+
+<ion-content padding>
+    <div [ngSwitch]="requests">
+
+      <!-- Home -->
+
+    <ion-list *ngSwitchCase="'home'" no-lines>
+  <ion-grid>
+   
+    <ion-row>
+      <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+      </ion-col>
+      <ion-col ion-col text-left no-padding col-10 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <h1 style="margin-top: 5px !important;">HAVE A COUPON?</h1>
+          <h4 style="text-align:center !important;">Just fill coupon number below and unlock the exam</h4>
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row>
+        <!-- <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+        </ion-col> -->
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
+        </ion-col>
+      </ion-row><br><br>
+
+      <ion-row>
+          <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+          <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <button class="btn1" ion-button (click)= "addCoupon()" >Add Coupon</button>
+          </ion-col>
+          <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            
+            </ion-col>
+            </ion-row>
+            
+            
+
+  </ion-grid>
+
+  <hr>
+
+  <ion-grid>
+    <ion-row>
+        <ion-col ion-col text-left no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <h5 style="margin-top: 5px !important;">Bookmarked MCQs:0</h5>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-3 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            
+      
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 id="col">
+            
+            <h5 style="margin-top: 5px !important;">Reshuffle MCQs</h5>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+
+  <hr>
+
+  <ion-grid style="text-align:center !important;">
+   <br>
+      <ion-row>
+        
+        <ion-col ion-col text-left no-padding col-12 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <h1 id="heading">Revision Area</h1>
+            <h4 style="text-align:center !important;">MCQs that you bookmark will appear here for you to revise</h4>
+        </ion-col>
+      </ion-row>
+</ion-grid>  
+
+</ion-list>
+
+<!-- Exams -->
+
+<ion-list *ngSwitchCase="'exams'" no-lines>
+
+<ion-grid>
+    <ion-row>
+        <ion-col ion-col text-left no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <h5>Show Purchased</h5>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-5 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            
+      
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-2 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 id="col">
+            
+            <h5>Show All</h5>
+          </ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+    
+          </ion-col>
+          <ion-col ion-col text-left no-padding col-10 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <h1 id="h1">Medical - FCPS</h1>
+          </ion-col>
+        </ion-row>
+
+
+  </ion-grid>
+
+
+
+  <ion-grid>
+
+  <ion-row>
+     
+    <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-card>
+            <img id="img" src="../../assets/images/gallery/image.jpg"/>
+            <ion-card-content>
+              <ion-card-title>
+                <h3>Mock series 1</h3>
+                </ion-card-title>
+              <h5 id="card-p">
+                Purchased
+              </h5>
+            </ion-card-content>
+          </ion-card>
+    </ion-col>
+
+
+  <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      <ion-card>
+          <img id="img" src="../../assets/images/gallery/image.jpg"/>
+          <ion-card-content>
+            <ion-card-title>
+              <h3>Mock series 1</h3>
+              </ion-card-title>
+            <h5 id="card-p">
+              Purchased
+            </h5>
+          </ion-card-content>
+        </ion-card>
+  </ion-col>
+    
+  </ion-row>
+
+
+  <ion-row>
+     
+      <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <ion-card>
+              <img id="img" src="../../assets/images/gallery/image.jpg"/>
+              <ion-card-content>
+                <ion-card-title>
+                  <h3>Mock series 1</h3>
+                  </ion-card-title>
+                <h5 id="card-p">
+                  Purchased
+                </h5>
+              </ion-card-content>
+            </ion-card>
+      </ion-col>
+  
+  
+    <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-card>
+            <img id="img" src="../../assets/images/gallery/image.jpg"/>
+            <ion-card-content>
+              <ion-card-title>
+                <h3>Mock series 1</h3>
+                </ion-card-title>
+              <h5 id="card-p">
+                Purchased
+              </h5>
+            </ion-card-content>
+          </ion-card>
+    </ion-col>
+      
+    </ion-row>
+
+</ion-grid>
+<br>
+<hr>
+
+<ion-grid>
+
+      <ion-row>
+          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+    
+          </ion-col>
+          <ion-col ion-col text-left no-padding col-10 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <h1 id="h1">Medical - PMDC</h1>
+          </ion-col>
+        </ion-row>
+
+
+  </ion-grid>
+
+  <ion-grid>
+
+      <ion-row>
+         
+        <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-card>
+                <img id="img" src="../../assets/images/gallery/image.jpg"/>
+                <ion-card-content>
+                  <ion-card-title>
+                    <h3>Mock series 1</h3>
+                    </ion-card-title>
+                  <h5 id="card-p">
+                    Purchased
+                  </h5>
+                </ion-card-content>
+              </ion-card>
+        </ion-col>
+    
+    
+      <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <ion-card>
+              <img id="img" src="../../assets/images/gallery/image.jpg"/>
+              <ion-card-content>
+                <ion-card-title>
+                  <h3>Mock series 1</h3>
+                  </ion-card-title>
+                <h5 id="card-p">
+                  Purchased
+                </h5>
+              </ion-card-content>
+            </ion-card>
+      </ion-col>
+        
+      </ion-row>
+      </ion-grid>
+
+      <br>
+  
+
+      <ion-grid style="background-color: white !important;">
+        
+            <ion-row>
+                <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <p id="paragraph">You can always add more exams.</p>
+                    <button class="btn2" ion-button (click)="ClickToExamsPreferencesPage()">Add More Exams</button>
+    
+                  </ion-col>
+                 
+                
+    
+            </ion-row>
+            <br>
+            <br>
+            <br>
+            
+          </ion-grid>
+
+
+
+
+</ion-list>
+
+
+<ion-list *ngSwitchCase="'profile'" no-lines>
+
+<ion-grid id="name">
+  <ion-row>
+      <ion-col ion-col text-center no-padding col-4 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+        </ion-col>
+        <ion-col ion-col text-center no-padding col-4 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+    <ion-avatar>
+        <img class="circle-pic" src="../../assets/images/gallery/image.jpg" (click)="goProfile()">
+      </ion-avatar>
+      
+      </ion-col>
+    </ion-row>
+
+    <br>
+
+    <ion-row>
+    
+      <ion-col ion-col text-center no-padding col-4 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+      </ion-col>
+
+      <ion-col ion-col text-center no-padding col-4 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      <h2 style="color: white">Aqib feroz</h2>
+    </ion-col>
+
+      <ion-col ion-col text-right no-padding col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+      </ion-col>
+
+      <ion-col ion-col text-center no-padding col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <i class="fas fa-pen" style="color: white !important;"></i>
+      </ion-col>
+
+      </ion-row>
+    
+<br>
+</ion-grid>
+<br>
+
+<ion-grid>
+  <ul>
+    <li>
+          <a (click)="goAddCouponPage()">
+              <i class="fas fa-notes-medical"></i> Add Coupon
+          </a>
+        </li>
+    <br>
+    <li>
+        <a (click)="goBalancetransactionPage()">
+            <i class="fas fa-print"></i>Balance and Transactions
+          </a>
+      </li>
+      <br>
+      <li>
+          <a (click)="goExamsHistoryPage()">
+              <i class="fas fa-chart-pie"></i>Exams History
+            </a>
+        </li>
+        <br>
+        <li>
+            <a (click)="goExamPreferencesPage()">
+              <i class="fas fa-chart-pie"></i>Exams Preferences</a>
+          </li>
+       
+          <br>
+          <li>
+              <a (click)="goReportPage()">
+                  <i class="fas fa-exclamation-circle"></i>Report
+            </a>
+            </li>
+            <br>
+            <li>
+                <a (click)="goSignoutPage()">
+                    <i class="fas fa-sign-out-alt"></i>Sign out
+                  </a>
+              </li>
+  </ul>
+</ion-grid>
+
+</ion-list>
+
+
+
+
+</div>
+
+</ion-content>
