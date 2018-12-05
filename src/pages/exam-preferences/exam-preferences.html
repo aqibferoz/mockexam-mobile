@@ -34,16 +34,16 @@
         
       </ion-row>
 
-      <ion-row>
+      <ion-row *ngIf="data">
           <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               
             </ion-col>
-        <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-card>
+        <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 *ngFor="let x of data">
+            <ion-card >
                 <ion-card-header>
                     <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
                 </ion-card-header>
-                <ion-card-title>FCPS</ion-card-title>
+                <ion-card-title>{{x.name}}</ion-card-title>
                 <ion-card-content>
                   <h5 id="card-p">234 NEW ENTRIES</h5>
                   <button class="btn1" ion-button>Add exam</button>

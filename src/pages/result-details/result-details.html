@@ -1,0 +1,57 @@
+
+<ion-header>
+
+  <ion-navbar transparent>
+      <ion-title>Result <b>Details</b></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    <ion-grid>
+       
+      <ion-row>
+         
+            <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <div>
+                    <canvas baseChart
+                            [data]="pieChartData"
+                            [labels]="pieChartLabels"
+                            [chartType]="pieChartType"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
+                  </div>
+              </ion-col>
+      </ion-row>
+      <br>
+     
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+          <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <h5>Keep learning to improve your score, you need more practice to clear your test. Review your performance and keep practicing.
+                  you need more practice to clear your test. Review your performance and keep practicing.
+                  you need more practice to clear your test. Review your performance and keep practicing.
+              </h5>
+            </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <button class="btn1" ion-button (click)="expand()">Expand</button>
+            <div *ngIf="visible; then evenClicked">This works</div>
+         
+
+          <ng-template #evenClicked>
+            <h3>Blood gases</h3>
+            <h3>Chest x-ray</h3>
+            <h3>Echocardiogram</h3>
+            <h3>Electrocardiogram</h3>
+            <h3>Pulmonary function test</h3>
+          </ng-template>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+
+</ion-content>

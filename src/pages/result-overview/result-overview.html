@@ -1,0 +1,69 @@
+
+<ion-header>
+
+    <ion-navbar transparent>
+        <ion-icon name="arrow-round-back" (click) = "goBack()"></ion-icon>
+          <ion-title>Result <b>Overview</b></ion-title>
+      </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+      <ion-grid style="background-color: #f4f4f4 !important;">
+     
+          <ion-row>
+            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      
+            </ion-col>
+            <ion-col ion-col text-center no-padding col-10 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <h1 style="margin-top: 5px !important;">Total Score</h1>
+                <h2>90/200</h2>
+                <h3 id="score">Passing Score: 140</h3>
+                <h5>Keep learning to improve your score, you need more practice to clear your test. Review your performance and keep practicing.</h5>
+                
+            </ion-col>
+          </ion-row>
+          <br>
+        </ion-grid>
+
+        <ion-grid>
+            <br>
+          <ion-row>
+            
+
+              <ion-col ion-col text-left no-padding col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      
+                </ion-col>
+                <ion-col ion-col text-left no-padding col-9 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <h3>Time Allowed:</h3>
+                  <h3>Time Taken:</h3>
+                  <h3>Total Questions:</h3>
+
+                  </ion-col>
+          </ion-row>
+          <ion-row>
+             
+                <ion-col ion-col text-left no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <div>
+                        <canvas baseChart
+                                [data]="pieChartData"
+                                [labels]="pieChartLabels"
+                                [chartType]="pieChartType"
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                      </div>
+                  </ion-col>
+          </ion-row>
+          <br>
+          <ion-row>
+              
+              <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <button class="btn1" ion-button (click)="goToResultDetailsPage()">View Solutions</button>
+
+                </ion-col>
+          </ion-row>
+        </ion-grid>
+      
+  </ion-content>
+  

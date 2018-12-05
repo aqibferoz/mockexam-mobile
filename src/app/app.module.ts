@@ -29,6 +29,15 @@ import { BankTransferPageModule } from '../pages/bank-transfer/bank-transfer.mod
 import { BankInformationPageModule } from '../pages/bank-information/bank-information.module';
 import { SuggestCorrectionPageModule } from '../pages/suggest-correction/suggest-correction.module';
 import { EasypayWalletPageModule } from '../pages/easypay-wallet/easypay-wallet.module';
+import { ExamsDetailsUnpurchasedPageModule } from '../pages/exams-details-unpurchased/exams-details-unpurchased.module';
+import { ExamInstructionsPageModule } from '../pages/exam-instructions/exam-instructions.module';
+import { PurchaseExamPageModule } from '../pages/purchase-exam/purchase-exam.module';
+import { ExaminationPageModule } from '../pages/examination/examination.module';
+import { ResultOverviewPageModule } from '../pages/result-overview/result-overview.module';
+
+import { ChartsModule } from 'ng2-charts';
+import { ResultDetailsPageModule } from '../pages/result-details/result-details.module';
+
 
 @NgModule({
   declarations: [
@@ -59,6 +68,14 @@ import { EasypayWalletPageModule } from '../pages/easypay-wallet/easypay-wallet.
     BankInformationPageModule,
     SuggestCorrectionPageModule,
     EasypayWalletPageModule,
+    ExamsDetailsUnpurchasedPageModule,
+    ExamInstructionsPageModule,
+    PurchaseExamPageModule,
+    ExaminationPageModule,
+    ResultOverviewPageModule,
+    ResultDetailsPageModule,
+
+    ChartsModule,
 
     FormsModule,
     IonicModule.forRoot(MyApp)
