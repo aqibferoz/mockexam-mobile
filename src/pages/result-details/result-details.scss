@@ -1,0 +1,27 @@
+page-result-details {
+    .back-button.show-back-button{
+        margin-top: 0.5em !important;
+        color: black !important;
+    }
+    .toolbar .toolbar-title{
+        color: black !important;
+    }
+    .toolbar-background .toolbar-background-ios{
+        background-color: white !important;
+    }
+    ion-content{
+        background-color: white !important;
+    }
+    h5{
+        font-size: 15px !important;
+    }
+    .btn1{
+        margin-right:auto !important;
+        text-align: center !important;
+        width:140px !important;
+        height: 30px !important;
+        background-color: #5F43AB !important;
+        border-radius: 5px !important;
+        color: white !important; 
+    }
+}

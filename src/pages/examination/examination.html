@@ -1,0 +1,112 @@
+
+<ion-header>
+
+    <ion-navbar transparent>
+        <ion-icon id="icon" name="arrow-round-back" (click) = "goBack()"></ion-icon>
+
+    </ion-navbar>
+    <ion-title>Exam <b>Instructions</b></ion-title>
+    <h4>Pulmonology</h4>
+    <h5 id="question">Question: 10</h5>
+    <h5 id="marks">Marks:4</h5>
+  </ion-header>
+  
+  
+  <ion-content style="margin-top:6px !important; background-color: white !important;">
+    <ion-grid>
+        <ion-row>
+          
+            <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <h3>A 17 year boy attends the accident and emergency department having been illest while having playing football emergency department having been illest while having playing footballemergency department having been illest while having playing football</h3>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col ion-col text-left no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="chickenEgg" value="chicken" ng-model="formData.chickenEgg">
+                              Blood Gases
+                          </label>
+                      </div><br>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="chickenEgg" value="egg" ng-model="formData.chickenEgg">
+                              Chest X-ray
+                          </label>
+                      </div><br>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="chickenEgg" value="egg" ng-model="formData.chickenEgg">
+                              Echocardiogram
+                          </label>
+                      </div><br>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="chickenEgg" value="egg" ng-model="formData.chickenEgg">
+                              Electrocardiogram
+                          </label>
+                      </div><br>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="chickenEgg" value="egg" ng-model="formData.chickenEgg">
+                              Pulmonary function tests
+                          </label>
+                      </div>
+                  </div>
+
+
+              </ion-col>
+          </ion-row>
+    </ion-grid>
+    
+    
+
+
+  </ion-content>
+  <ion-footer>
+
+        <ion-grid style="background-color:#f4f4f4 !important;">
+          <br>
+          <ion-row>
+              <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                 
+                </ion-col>
+                <ion-col ion-col text-left no-padding col-10 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                 <a (click) = "goSuggestionPage()"> !Suggest Correction</a>
+                  </ion-col>
+          </ion-row>
+          <br>
+
+          <ion-row>
+              <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                 
+                </ion-col>
+                <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                    <button class="btn2" ion-button (click)="bookmark()">Bookmark</button>
+                  </ion-col>
+                  <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                      <button class="btn" ion-button (click)="next()">Next</button>
+                    </ion-col>
+          </ion-row>
+       
+                <ion-row>
+                  <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                 
+                  </ion-col>
+                    <ion-col ion-col text-center no-padding col-10 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                        <button class="btn1" ion-button (click)="submitExam()">Submit Test</button>
+        
+                      </ion-col>
+                      <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                 
+                        </ion-col>
+                    
+        
+                </ion-row>
+                <br>
+            
+              </ion-grid>
+  </ion-footer>
+  
