@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ExamPreferencesPage } from './exam-preferences';
+import {NgPipesModule} from 'ngx-pipes';
 
 @NgModule({
   declarations: [
@@ -8,6 +9,7 @@ import { ExamPreferencesPage } from './exam-preferences';
   ],
   imports: [
     IonicPageModule.forChild(ExamPreferencesPage),
+    NgPipesModule
   ],
 })
 export class ExamPreferencesPageModule {}

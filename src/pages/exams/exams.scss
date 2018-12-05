@@ -24,7 +24,7 @@ page-exams {
         color:black !important;
         font-size: 0.9em !important;
         height: 18px !important;
-        
+
     }
     ion-card-title{
         margin-top: -1em !important;
@@ -46,11 +46,11 @@ page-exams {
         font-size: 1.73em !important;
     }
     ion-card-content{
-        word-spacing: normal !important; 
+        word-spacing: normal !important;
     }
     #card-p{
-        word-spacing: normal !important; 
-        margin-top: -1.5em !important;
+        word-spacing: normal !important;
+        // margin-top: -1.5em !important;
         font-size: x-small !important;
    }
    ion-card{
@@ -62,7 +62,7 @@ page-exams {
 
    }
    #paragraph{
-    word-spacing: normal !important; 
+    word-spacing: normal !important;
     text-align: center !important;
 
    }
@@ -75,7 +75,7 @@ page-exams {
     border: 1px solid white;
     color:#5F43AB !important;
     font-weight: 400 !important;
-    
+
 }
 
 .btn{
@@ -85,7 +85,11 @@ page-exams {
  border-radius: 8px !important;
  color:white !important;
  font-weight: 400 !important;
- 
+
 }
-   
+
+.card-title-ios{
+    margin: -15px 0 !important;
+}
+
 }

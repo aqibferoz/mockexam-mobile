@@ -14,7 +14,7 @@ page-exam-preferences {
          margin-top: 15px !important;
     }
     #title{
-        padding-top: 20px !important;
+        // padding-top: 20px !important;
     }
     p{
         font-size: 16px;
@@ -24,13 +24,17 @@ page-exam-preferences {
     .input{
         color:black !important;
     }
+    // .back-button.show-back-button{
+    //     display: none !important;
+    // }
     .btn1{
         background-color: #F4F4F4;
         border-radius: 15px !important;
         color:black !important;
         font-size: 0.9em !important;
         height: 18px !important;
-        
+        width: 100px !important;
+
     }
     ion-card-title{
         margin-top: -1em !important;
@@ -39,6 +43,15 @@ page-exam-preferences {
         text-align: center !important;
         color: black !important;
         // padding-top: 9px !important;
+    }
+    .labelsuccess{
+        background-color: green;
+        color: white;
+    }
+
+    .labelfailure{
+        background-color: red;
+        color: white;
     }
     #para{
         // padding-top: 5px !important;
@@ -52,10 +65,10 @@ page-exam-preferences {
         font-size: 1.73em !important;
     }
     ion-card-content{
-        word-spacing: normal !important; 
+        word-spacing: normal !important;
     }
     #card-p{
-        word-spacing: normal !important; 
+        word-spacing: normal !important;
         margin-top: -1.5em !important;
         font-size: x-small !important;
    }
@@ -68,7 +81,7 @@ page-exam-preferences {
 
    }
    #paragraph{
-    word-spacing: normal !important; 
+    word-spacing: normal !important;
     text-align: center !important;
 
    }
@@ -81,7 +94,7 @@ page-exam-preferences {
     border: 1px solid white;
     color:#5F43AB !important;
     font-weight: 400 !important;
-    
+
 }
 
 .btn{
@@ -91,6 +104,6 @@ page-exam-preferences {
  border-radius: 8px !important;
  color:white !important;
  font-weight: 400 !important;
- 
+
 }
 }

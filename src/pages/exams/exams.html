@@ -1,127 +1,51 @@
 
 <ion-header>
-
     <ion-navbar transparent>
       <ion-title  id="title">mock<b>exams</b></ion-title>
     </ion-navbar>
-    <h1>Hello Username</h1>
+    <h1>Hi {{student?.name}}!</h1>
     <p id="para">Looks like you are preparing for exam.</p>
     <p id="para">Here is the list of exams that we offer right now.</p>
   </ion-header>
-  
-  
+
+
   <ion-content>
-    <ion-grid>
-      <ion-row>
-          <ion-col ion-col text-center no-padding col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
-            </ion-col>
-        <ion-col ion-col text-center no-padding col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+    <ion-grid *ngFor="let y of categories ">
+      <ion-row *ngIf="y.isPresent">
+          <!-- <ion-col ion-col text-center no-padding col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+            </ion-col> -->
+        <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           <p>Medical</p>
+          <hr>
         </ion-col>
-        
+
       </ion-row>
 
-      <ion-row>
-          <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
-            </ion-col>
-        <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-card>
+      <ion-row  *ngIf="mocks">
+          <!-- <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+            </ion-col> -->
+        <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6
+        *ngFor="let x of mocks | filterBy:['categoryName']: y.categoryName">
+            <ion-card (click)="goExam(x.id)" *ngIf="x.preference">
                 <ion-card-header>
                     <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
                 </ion-card-header>
-                <ion-card-title>FCPS</ion-card-title>
+                <ion-card-title>{{x?.examName}}</ion-card-title>
                 <ion-card-content>
-                  <h5 id="card-p">234 NEW ENTRIES</h5>
-                  <button class="btn1" ion-button>Add exam</button>
+                  <h2>{{x?.mockName}}</h2>
+                  <h5 id="card-p">Purchased by 0 Users</h5>
                 </ion-card-content>
               </ion-card>
         </ion-col>
 
-
-
-        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
-          </ion-col>
-      <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-          <ion-card>
-              <ion-card-header>
-                  <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
-              </ion-card-header>
-              <ion-card-title>FCPS</ion-card-title>
-              <ion-card-content>
-                <h5 id="card-p">234 NEW ENTRIES</h5>
-                <button class="btn1" ion-button>Add exam</button>
-              </ion-card-content>
-            </ion-card>
-      </ion-col>
-        
       </ion-row>
 
 
-
-      <ion-row>
-          <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
-            </ion-col>
-        <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-card>
-                <ion-card-header>
-                    <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
-                </ion-card-header>
-                <ion-card-title>FCPS</ion-card-title>
-                <ion-card-content>
-                  <h5 id="card-p">234 NEW ENTRIES</h5>
-                  <button class="btn1" ion-button>Add exam</button>
-                </ion-card-content>
-              </ion-card>
-        </ion-col>
-
-
-
-        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
-          </ion-col>
-      <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-          <ion-card>
-              <ion-card-header>
-                  <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
-              </ion-card-header>
-              <ion-card-title>FCPS</ion-card-title>
-              <ion-card-content>
-                <h5 id="card-p">234 NEW ENTRIES</h5>
-                <button class="btn1" ion-button>Add exam</button>
-              </ion-card-content>
-            </ion-card>
-      </ion-col>
-        
-      </ion-row>
-
-      
-
-
-      
     </ion-grid>
     <br>
     <hr>
-
-    <ion-grid>
-      <ion-row>
-          <ion-col ion-col col-2>
-              <ion-icon name="add" style="font-size: 2.8em !important;"></ion-icon>
-              
-            </ion-col>
-
-            <ion-col ion-col col-4>
-                <p id="heading">Engineering</p>
-            </ion-col>
-      </ion-row>
-      
-    </ion-grid>
-
-    <hr>
-
 
     <ion-grid>
         <hr>
@@ -129,17 +53,11 @@
               <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                   <p id="paragraph">Didn't find the exam you were looking for.</p>
                   <button class="btn" ion-button (click)="ClickToRequestExamPage()">Request an Exam</button>
-  
                 </ion-col>
-               
-              
-  
           </ion-row>
-          
-          
         </ion-grid>
 
-    
+
 
     <ion-grid style="background-color: white !important;">
       <hr>
@@ -149,18 +67,17 @@
                 <button class="btn2" ion-button (click)="ClickToHomePage()">Continue</button>
 
               </ion-col>
-             
-            
+
+
 
         </ion-row>
         <br>
         <br>
         <br>
-        
+
       </ion-grid>
 
 
-    
-  
+
+
   </ion-content>
-  

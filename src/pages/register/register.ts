@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoginPage } from '../login/login';
+
+// Importing Providers
+import {ApiProvider} from '../../providers/api/api';
+import {AuthProvider} from '../../providers/auth/auth';
 
 /**
  * Generated class for the RegisterPage page.
@@ -15,13 +20,46 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  user={
+    name:'',
+    email:'',
+    password:'',
+    dob:'',
+    gender:'',
+    cnic:'',
+    registeration_no:'',
+    phone:'',
+    examPreference: [],
+    examPurchased:[]
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterPage');
-  }
+  err='';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+               private auth: AuthProvider, private api: ApiProvider) {}
+
+  // ionViewDidLoad() {
+  //   console.log('ionViewDidLoad RegisterPage');
+  // }
   ClickToLogin(){
-    this.navCtrl.push('LoginPage');
+    this.navCtrl.push(LoginPage);
+  }
+  ClickToCreate(){
+    if(this.user.email !== '' && this.user.password !== ''){
+      this.auth.signup(this.user.email, this.user.password).then(resp=>{
+        this.auth.saveToken(resp.user.uid);
+        this.api.addStudent(localStorage.getItem('uid'), this.user).then(response=>{
+         // this.router.navigate(['/login']);
+         this.navCtrl.push(LoginPage);
+        })
+      },err => this.showErr(err.message))
+    }
+
+  }
+
+  showErr(msg){
+    this.err = msg;
+    setTimeout(()=> this.err = '' ,3000);
   }
 }

@@ -1,6 +1,6 @@
 <ion-header>
 
-  
+
 
 </ion-header>
 
@@ -15,14 +15,14 @@
               <div form>
               <!-- Header Title -->
               <h1 class="pad">mock<b>exams</b></h1>
-             
-              
+
+
               <ion-row>
                 <ion-col  text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
 
                 </ion-col>
                 <ion-col  text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    
+
                    <h2>Create your own account</h2>
                    <h5>We are pretty sure you will use this app to become better and better everyday</h5>
                   </ion-col>
@@ -30,39 +30,39 @@
 
                     </ion-col>
               </ion-row>
-              
+
                 <!--Form-->
-                  
+
                   <ion-item text-center style="background-color:#5F43AB !important">
                     <!---Input field email-->
-                    
-                    <ion-input class="input" text-left  type="name" placeholder="NAME" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"></ion-input>
-                    
+
+                    <ion-input class="input" text-left name="name" [(ngModel)]="user.name"  type="name" placeholder="NAME" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"></ion-input>
+
                 </ion-item><br>
                 <ion-item text-center style="background-color:#5F43AB !important">
                     <!---Input field email-->
-                    
-                    <ion-input class="input" text-left  type="email" placeholder="EMAIL"></ion-input>
-                    
+
+                    <ion-input class="input" text-left name="email" [(ngModel)]="user.email"  type="email" placeholder="EMAIL"></ion-input>
+
                 </ion-item><br>
                 <ion-item text-center style="background-color:#5F43AB !important">
                   <!---Input field email-->
-                  
-                  <ion-input class="input" text-left  type="password" placeholder="PASSWORD"></ion-input>
-                  
+
+                  <ion-input class="input" text-left name="password" [(ngModel)]="user.password"  type="password" placeholder="PASSWORD"></ion-input>
+
               </ion-item><br>
               <ion-item text-center style="background-color:#5F43AB !important">
                 <!---Input field email-->
-                
-                <ion-input class="input" text-left  type="gender" placeholder="GENDER" ></ion-input>
+
+                <ion-input class="input" text-left name="gender"  type="gender" [(ngModel)]="user.gender" placeholder="GENDER" ></ion-input>
                 <ion-option value="m">Male</ion-option>
                 <ion-option value="f">Female</ion-option>
             </ion-item><br>
             <ion-item text-center style="background-color:#5F43AB !important">
               <!---Input field email-->
-              
-              <ion-input class="input" text-left type="date" placeholder="BIRTHDAY" ></ion-input>
-              
+
+              <ion-input class="input" text-left name="dob" [(ngModel)]="user.dob" type="date" placeholder="BIRTHDAY" ></ion-input>
+
           </ion-item>
           <br><br>
 
@@ -71,41 +71,41 @@
                     <h6>By creating an account, you agree to Terms and Policy</h6>
 
                       </ion-col>
-                    
-                  
+
+
                 </ion-row>
-                  
-                  
+
+
                 <!---Register button-->
                   <ion-row>
                   <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-  
+
                   </ion-col>
                   <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                 <button class="btn" ion-button block default-button text-capitalize box-shadow (click)="ClickToCreate()">CREATE ACCOUNT</button>
                   </ion-col>
                   <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    
+
                     </ion-col>
                     </ion-row><br>
                     <hr>
-                    
+
                     </div><br>
-                    
-             
+
+
                 <ion-row>
                   <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 >
-                    
+
                   </ion-col>
                   <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10>
                    <label>Already have an account?</label><button (click) = "ClickToLogin()" style="background-color: #5F43AB; color: white"><i>Login</i></button>
                   </ion-col>
                   <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 >
-                   
+
                     </ion-col>
                 </ion-row>
-                
-              
+
+
             </ion-col>
         </ion-row>
     </ion-grid>

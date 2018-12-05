@@ -1,160 +1,96 @@
-
 <ion-header>
 
     <ion-navbar transparent>
-        <ion-icon id="icon" name="arrow-round-back" (click) = "goBack()"></ion-icon>
+        <!-- <ion-icon id="icon" name="arrow-round-back" (click)="goBack()"></ion-icon> -->
         <ion-title>Exam <b>Preferences</b></ion-title>
     </ion-navbar>
-   
-  </ion-header>
-  
-  
-  <ion-content>
-    <ion-grid>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-grid *ngIf="categories">
         <ion-row>
-          
+
             <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                <h1>Hello Username</h1>
+                <h1>Hello {{user?.name}}</h1>
                 <p id="para">Looks like you are preparing for exam.</p>
                 <p id="para">Here is the list of exams that we offer right now.</p>
-                <p id="para">You have options to add multiple exams at a time.</p>
+                <p id="para">You have options to add multiple exams</p>
+                <p id="para">at a time.</p>
             </ion-col>
-          </ion-row>
+        </ion-row>
     </ion-grid>
-    
-    <ion-grid>
-      
-      <ion-row>
-          <ion-col ion-col text-center no-padding col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
+
+    <ion-grid *ngFor="let x of categories">
+
+        <ion-row>
+            <!-- <ion-col ion-col text-center no-padding col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+            </ion-col> -->
+            <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <p>{{x.categoryName}}</p>
+                <hr>
             </ion-col>
-        <ion-col ion-col text-center no-padding col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-          <p>Medical</p>
-        </ion-col>
-        
-      </ion-row>
 
-      <ion-row>
-          <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
+        </ion-row>
+
+        <ion-row *ngIf="mocks">
+            <!-- <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+            </ion-col> -->
+            <ion-col *ngFor="let y of mocks | filterBy:['categoryName']: x.categoryName" ion-col text-center no-padding
+                col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
+                    </ion-card-header>
+                    <ion-card-title>{{y.examName}}</ion-card-title>
+                    <ion-card-content>
+                        <h5 id="card-p">{{y.chapterName}}</h5>
+                        <button class="btn1" [class.labelsuccess]="y.preferances" [class.labelfailure]="!y.preferances"
+                            ion-button (click)="addExam(x)">{{y.buttonText}}</button>
+                    </ion-card-content>
+                </ion-card>
             </ion-col>
-        <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-card>
-                <ion-card-header>
-                    <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
-                </ion-card-header>
-                <ion-card-title>FCPS</ion-card-title>
-                <ion-card-content>
-                  <h5 id="card-p">234 NEW ENTRIES</h5>
-                  <button class="btn1" ion-button>Add exam</button>
-                </ion-card-content>
-              </ion-card>
-        </ion-col>
 
 
+        </ion-row>
 
-        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
-          </ion-col>
-      <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-          <ion-card>
-              <ion-card-header>
-                  <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
-              </ion-card-header>
-              <ion-card-title>FCPS</ion-card-title>
-              <ion-card-content>
-                <h5 id="card-p">234 NEW ENTRIES</h5>
-                <button class="btn1" ion-button>Add exam</button>
-              </ion-card-content>
-            </ion-card>
-      </ion-col>
-        
-      </ion-row>
-
-
-
-      <ion-row>
-          <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
-            </ion-col>
-        <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-card>
-                <ion-card-header>
-                    <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
-                </ion-card-header>
-                <ion-card-title>FCPS</ion-card-title>
-                <ion-card-content>
-                  <h5 id="card-p">234 NEW ENTRIES</h5>
-                  <button class="btn1" ion-button>Add exam</button>
-                </ion-card-content>
-              </ion-card>
-        </ion-col>
-
-
-
-        <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
-          </ion-col>
-      <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-          <ion-card>
-              <ion-card-header>
-                  <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
-              </ion-card-header>
-              <ion-card-title>FCPS</ion-card-title>
-              <ion-card-content>
-                <h5 id="card-p">234 NEW ENTRIES</h5>
-                <button class="btn1" ion-button>Add exam</button>
-              </ion-card-content>
-            </ion-card>
-      </ion-col>
-        
-      </ion-row>
-
-      
-
-
-      
     </ion-grid>
     <br>
     <hr>
 
-    <ion-grid >
-      <ion-row>
-          <ion-col ion-col col-2>
-              <ion-icon name="add" style="font-size: 2.8em !important; font-weight: bold !important;"></ion-icon>
-              
-            </ion-col>
+    <ion-grid style="background-color: white !important;">
 
-            <ion-col ion-col col-4>
-                <p id="heading">Engineering</p>
+        <ion-row>
+            <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <p id="paragraph">Didn't find the exam you were looking for?</p>
+                <button class="btn" ion-button (click)="ClickToRequestExamPage()">Request an Exam</button>
+
             </ion-col>
-      </ion-row>
-      
+        </ion-row>
+        <br>
+        <br>
     </ion-grid>
 
-  
-
-
     <ion-grid style="background-color: white !important;">
-       
+        <hr>
           <ion-row>
               <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                  <p id="paragraph">Didn't find the exam you were looking for?</p>
-                  <button class="btn" ion-button (click)="ClickToRequestExamPage()">Request an Exam</button>
-  
+                  <p id="paragraph">You have to select atleast one exam.</p>
+                  <button class="btn2" ion-button (click)="ClickToExamsPage()">Continue</button>
+
                 </ion-col>
-               
-              
-  
           </ion-row>
           <br>
-    <br>
+          <br>
+          <br>
+
         </ion-grid>
 
-    
 
 
-    
-  
-  </ion-content>
-  
+
+
+</ion-content>

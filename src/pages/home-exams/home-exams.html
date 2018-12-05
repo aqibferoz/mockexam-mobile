@@ -3,7 +3,7 @@
 
     <ion-navbar transparent>
       <ion-title>mock<b>exams</b></ion-title>
-      
+
     </ion-navbar>
     <br>
     <!-- <ion-toolbar> -->
@@ -12,15 +12,15 @@
         <ion-segment-button value="home">
           Home
         </ion-segment-button>
-        
+
         <ion-segment-button value="exams">
           Exams
         </ion-segment-button>
-    
+
         <ion-segment-button value="profile">
           Profile
         </ion-segment-button>
-    
+
       </ion-segment>
     <!-- </ion-toolbar> -->
   </ion-header>
@@ -33,7 +33,7 @@
 
     <ion-list *ngSwitchCase="'home'" no-lines>
   <ion-grid>
-   
+
     <ion-row>
       <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
 
@@ -48,37 +48,37 @@
 
     <ion-row>
         <!-- <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-  
+
         </ion-col> -->
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
         </ion-col>
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-  
+
           </ion-col>
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
         </ion-col>
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-  
+
           </ion-col>
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
         </ion-col>
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-  
+
           </ion-col>
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
         </ion-col>
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-  
+
           </ion-col>
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
         </ion-col>
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-  
+
           </ion-col>
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
@@ -87,17 +87,17 @@
 
       <ion-row>
           <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-  
+
           </ion-col>
           <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <button class="btn1" ion-button (click)= "addCoupon()" >Add Coupon</button>
           </ion-col>
           <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            
+
             </ion-col>
             </ion-row>
-            
-            
+
+
 
   </ion-grid>
 
@@ -109,11 +109,11 @@
             <h5 style="margin-top: 5px !important;">Bookmarked MCQs:0</h5>
         </ion-col>
         <ion-col ion-col text-left no-padding col-3 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            
-      
+
+
         </ion-col>
         <ion-col ion-col text-left no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 id="col">
-            
+
             <h5 style="margin-top: 5px !important;">Reshuffle MCQs</h5>
           </ion-col>
       </ion-row>
@@ -124,13 +124,13 @@
   <ion-grid style="text-align:center !important;">
    <br>
       <ion-row>
-        
+
         <ion-col ion-col text-left no-padding col-12 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <h1 id="heading">Revision Area</h1>
             <h4 style="text-align:center !important;">MCQs that you bookmark will appear here for you to revise</h4>
         </ion-col>
       </ion-row>
-</ion-grid>  
+</ion-grid>
 
 </ion-list>
 
@@ -144,18 +144,18 @@
             <h5>Show Purchased</h5>
         </ion-col>
         <ion-col ion-col text-left no-padding col-5 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            
-      
+
+
         </ion-col>
         <ion-col ion-col text-left no-padding col-2 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 id="col">
-            
+
             <h5>Show All</h5>
           </ion-col>
       </ion-row>
 
       <ion-row>
           <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-    
+
           </ion-col>
           <ion-col ion-col text-left no-padding col-10 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               <h1 id="h1">Medical - FCPS</h1>
@@ -170,7 +170,7 @@
   <ion-grid>
 
   <ion-row>
-     
+
     <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <ion-card>
             <img id="img" src="../../assets/images/gallery/image.jpg"/>
@@ -199,12 +199,12 @@
           </ion-card-content>
         </ion-card>
   </ion-col>
-    
+
   </ion-row>
 
 
   <ion-row>
-     
+
       <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           <ion-card>
               <img id="img" src="../../assets/images/gallery/image.jpg"/>
@@ -218,8 +218,8 @@
               </ion-card-content>
             </ion-card>
       </ion-col>
-  
-  
+
+
     <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <ion-card>
             <img id="img" src="../../assets/images/gallery/image.jpg"/>
@@ -233,7 +233,7 @@
             </ion-card-content>
           </ion-card>
     </ion-col>
-      
+
     </ion-row>
 
 </ion-grid>
@@ -244,7 +244,7 @@
 
       <ion-row>
           <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-    
+
           </ion-col>
           <ion-col ion-col text-left no-padding col-10 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               <h1 id="h1">Medical - PMDC</h1>
@@ -257,7 +257,7 @@
   <ion-grid>
 
       <ion-row>
-         
+
         <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <ion-card>
                 <img id="img" src="../../assets/images/gallery/image.jpg"/>
@@ -271,8 +271,8 @@
                 </ion-card-content>
               </ion-card>
         </ion-col>
-    
-    
+
+
       <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           <ion-card>
               <img id="img" src="../../assets/images/gallery/image.jpg"/>
@@ -286,29 +286,29 @@
               </ion-card-content>
             </ion-card>
       </ion-col>
-        
+
       </ion-row>
       </ion-grid>
 
       <br>
-  
+
 
       <ion-grid style="background-color: white !important;">
-        
+
             <ion-row>
                 <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     <p id="paragraph">You can always add more exams.</p>
                     <button class="btn2" ion-button (click)="ClickToExamsPreferencesPage()">Add More Exams</button>
-    
+
                   </ion-col>
-                 
-                
-    
+
+
+
             </ion-row>
             <br>
             <br>
             <br>
-            
+
           </ion-grid>
 
 
@@ -328,14 +328,14 @@
     <ion-avatar>
         <img class="circle-pic" src="../../assets/images/gallery/image.jpg" (click)="goProfile()">
       </ion-avatar>
-      
+
       </ion-col>
     </ion-row>
 
     <br>
 
     <ion-row>
-    
+
       <ion-col ion-col text-center no-padding col-4 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
 
       </ion-col>
@@ -353,7 +353,7 @@
       </ion-col>
 
       </ion-row>
-    
+
 <br>
 </ion-grid>
 <br>
@@ -382,7 +382,7 @@
             <a (click)="goExamPreferencesPage()">
               <i class="fas fa-chart-pie"></i>Exams Preferences</a>
           </li>
-       
+
           <br>
           <li>
               <a (click)="goReportPage()">

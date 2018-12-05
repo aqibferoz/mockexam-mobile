@@ -3,9 +3,22 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpClientModule } from '@angular/common/http';
+ import { HttpModule } from '@angular/http';
+ import {NgPipesModule} from 'ngx-pipes';
+
+// FireBase Modules
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+// Providers
+import { ApiProvider } from '../providers/api/api';
+import { AuthProvider } from '../providers/auth/auth';
+import {InAppBrowser} from '@ionic-native/in-app-browser'
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { RegisterPageModule } from '../pages/register/register.module';
 import { FormsModule } from '@angular/forms';
 import { LoginPageModule } from '../pages/login/login.module';
@@ -30,10 +43,22 @@ import { BankInformationPageModule } from '../pages/bank-information/bank-inform
 import { SuggestCorrectionPageModule } from '../pages/suggest-correction/suggest-correction.module';
 import { EasypayWalletPageModule } from '../pages/easypay-wallet/easypay-wallet.module';
 
+
+
+
+
+export const firebaseConfig = {
+  apiKey: 'AIzaSyCltNYHGUWtFS3cx3OOC4mOhL1eYZ5wd_0',
+    authDomain: 'mockexam-2d625.firebaseapp.com',
+    databaseURL: 'https://mockexam-2d625.firebaseio.com',
+    projectId: 'mockexam-2d625',
+    storageBucket: 'mockexam-2d625.appspot.com',
+    messagingSenderId: '242926671154'
+};
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
   ],
   imports: [
     BrowserModule,
@@ -59,19 +84,31 @@ import { EasypayWalletPageModule } from '../pages/easypay-wallet/easypay-wallet.
     BankInformationPageModule,
     SuggestCorrectionPageModule,
     EasypayWalletPageModule,
+    NgPipesModule,
 
     FormsModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    HttpClientModule,
+    HttpModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    AngularFireDatabase,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiProvider,
+    AuthProvider,
+    InAppBrowser
+
   ]
 })
 export class AppModule {}
