@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController,LoadingController } from 'ionic-angular';
-import { ForgotPasswordCodePage } from '../forgot-password-code/forgot-password-code';
+//import { ForgotPasswordCodePage } from '../forgot-password-code/forgot-password-code';
 
 
 // Importing Providers
 // import {ApiProvider} from '../../providers/api/api';
 import {AuthProvider} from '../../providers/auth/auth';
-import { HomeExamsPage } from '../home-exams/home-exams';
-import { InAppBrowser, InAppBrowserOptions} from '@ionic-native/in-app-browser';
+//import { HomeExamsPage } from '../home-exams/home-exams';
+//import { InAppBrowser, InAppBrowserOptions} from '@ionic-native/in-app-browser';
 
 /**
  * Generated class for the ForgotPasswordPage page.
@@ -23,7 +23,7 @@ import { InAppBrowser, InAppBrowserOptions} from '@ionic-native/in-app-browser';
 })
 export class ForgotPasswordPage {
   loading: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private inAppBrowser: InAppBrowser,
+  constructor(public navCtrl: NavController, public navParams: NavParams,
               private auth: AuthProvider, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {}
 
   ionViewDidLoad() {

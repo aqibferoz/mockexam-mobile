@@ -5,23 +5,57 @@
         <ion-icon id="icon" name="arrow-round-back" (click) = "goBack()"></ion-icon>
 
     </ion-navbar>
-    <ion-title>Exam <b>Instructions</b></ion-title>
-    <h4>Pulmonology</h4>
-    <h5 id="question">Question: 10</h5>
-    <h5 id="marks">Marks:4</h5>
-  </ion-header>
-  
-  
-  <ion-content style="margin-top:6px !important; background-color: white !important;">
+    <ion-title>{{userexam?.examName}}</ion-title>
+    <h4>{{userexam?.mcqs[userexam.currentIndex].chapterName}}</h4>
     <ion-grid>
         <ion-row>
-          
-            <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                <h3>A 17 year boy attends the accident and emergency department having been illest while having playing football emergency department having been illest while having playing footballemergency department having been illest while having playing football</h3>
+        <ion-col ion-col col-4> <h5 id="question">Q #: {{userexam?.currentIndex +1}} / {{userexam?.totalMcqs}}</h5> </ion-col>
+        <ion-col ion-col col-4>  <h4 class="color counter">
+                <countdown [config]="{leftTime: counter}" (event)="onEvent($event)" >$!h!:$!m!:$!s!</countdown>
+              </h4></ion-col>
+        <ion-col ion-col col-4> <h5 id="marks">Marks: {{userexam?.totalMarks}}</h5> </ion-col>
+    </ion-row>
+    </ion-grid>
+
+
+
+  </ion-header>
+
+
+  <ion-content style="margin-top:160px !important; background-color: white !important;" *ngIf="counter"  >
+    <ion-grid>
+        <ion-row>
+            <ion-col  ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                  <button class="btnsave btn-secondary" (click)="saveTest()">SAVE EXAM</button>
             </ion-col>
-          </ion-row>
-          <ion-row>
-              <ion-col ion-col text-left no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        </ion-row>
+        <ion-row>
+            <ion-col *ngIf="userexam" ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <h3><b>{{userexam.mcqs[userexam.currentIndex].question}}</b></h3>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let x of userexam.mcqs[userexam.currentIndex].options">
+                <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3
+                 col-xl-6 >
+                 <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio"
+                                [disabled]="userexam.mcqs[userexam.currentIndex].answer !== ''"
+                                [checked]="userexam.mcqs[userexam.currentIndex].answer === x"
+                                (click)="onSelect(x)">
+                                <i class="fa fa-circle-o fa-2x"></i>
+                                <i class="fa fa-dot-circle-o fa-2x"></i> <span>
+                                  {{x}}</span>
+                            </label>
+                        </div><br>
+                    </div>
+
+
+                    </ion-col>
+        </ion-row>
+          <!-- <ion-row>
+                            <ion-col ion-col text-left no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
 
                   <div class="form-group">
                       <div class="radio">
@@ -58,10 +92,10 @@
 
 
               </ion-col>
-          </ion-row>
+          </ion-row> -->
     </ion-grid>
-    
-    
+
+
 
 
   </ion-content>
@@ -71,7 +105,7 @@
           <br>
           <ion-row>
               <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                 
+
                 </ion-col>
                 <ion-col ion-col text-left no-padding col-10 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                  <a (click) = "goSuggestionPage()"> !Suggest Correction</a>
@@ -81,32 +115,34 @@
 
           <ion-row>
               <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                 
+
                 </ion-col>
                 <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     <button class="btn2" ion-button (click)="bookmark()">Bookmark</button>
                   </ion-col>
                   <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                      <button class="btn" ion-button (click)="next()">Next</button>
+                      <button class="btn" ion-button (click)="onNext()"
+                      [disabled]="userexam?.currentIndex  == userexam?.mcqs.length -1"
+                      *ngIf="userexam?.currentIndex  !== userexam?.mcqs.length -1">Next</button>
                     </ion-col>
           </ion-row>
-       
+
                 <ion-row>
                   <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                 
+
                   </ion-col>
                     <ion-col ion-col text-center no-padding col-10 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                        <button class="btn1" ion-button (click)="submitExam()">Submit Test</button>
-        
+                        <button class="btn1" ion-button (click)="submitTest()"
+                        *ngIf="userexam?.currentIndex  == userexam?.mcqs.length -1">Submit Test</button>
+
                       </ion-col>
                       <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                 
+
                         </ion-col>
-                    
-        
+
+
                 </ion-row>
                 <br>
-            
+
               </ion-grid>
   </ion-footer>
-  

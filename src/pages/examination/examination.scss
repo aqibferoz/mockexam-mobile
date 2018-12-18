@@ -37,9 +37,9 @@ page-examination {
         color:black !important;
         font-size: 0.9em !important;
         height: 18px !important;
-        
+
     }
-   
+
     h1{
         text-align: center !important;
         color: black !important;
@@ -57,10 +57,10 @@ page-examination {
         font-size: 1.73em !important;
     }
     ion-card-content{
-        word-spacing: normal !important; 
+        word-spacing: normal !important;
     }
     #card-p{
-        word-spacing: normal !important; 
+        word-spacing: normal !important;
         margin-top: -1.5em !important;
         font-size: x-small !important;
    }
@@ -73,7 +73,7 @@ page-examination {
 
    }
    #paragraph{
-    word-spacing: normal !important; 
+    word-spacing: normal !important;
     text-align: center !important;
 
    }
@@ -90,7 +90,7 @@ page-examination {
     border: 1px solid white;
     color:#5F43AB !important;
     font-weight: 400 !important;
-    
+
 }
 a{
     color: #5F43AB !important;
@@ -107,7 +107,7 @@ a{
  border-radius: 4px !important;
  color:white !important;
  font-weight: 400 !important;
- 
+
 }
 .btn1{
     text-align: center !important;
@@ -119,7 +119,7 @@ a{
  border: 1px solid white;
  color:#5F43AB !important;
  font-weight: 400 !important;
- 
+
 }
 ion-footer{
     margin-top: 12px !important;
@@ -135,13 +135,23 @@ h4{
 #marks{
     color: white !important;
     text-align: right !important;
-    margin-top: -1.8em !important;
-    margin-right: 1em !important;   
+   // margin-top: -1.8em !important;
+    margin-right: 0.8em !important;
 }
 .alert-button-group{
     background: #5F43AB !important;
 }
 .alert-ios{
     background: #5F43AB !important;
+}
+.btnsave{
+    text-align: center !important;
+    width: 150px !important;
+    height: 40px !important;
+ background-color: green !important;
+ border-radius: 4px !important;
+ color:white !important;
+ font-weight: 400 !important;
+
 }
 }

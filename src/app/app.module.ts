@@ -6,6 +6,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
  import { HttpModule } from '@angular/http';
  import {NgPipesModule} from 'ngx-pipes';
+ import { SimpleTimer } from 'ng2-simple-timer';
+ import { CountdownModule } from 'ngx-countdown';
+ import { ChartsModule } from 'ng2-charts';
 
 // FireBase Modules
 import { AngularFireModule } from '@angular/fire';
@@ -47,8 +50,6 @@ import { ExamInstructionsPageModule } from '../pages/exam-instructions/exam-inst
 import { PurchaseExamPageModule } from '../pages/purchase-exam/purchase-exam.module';
 import { ExaminationPageModule } from '../pages/examination/examination.module';
 import { ResultOverviewPageModule } from '../pages/result-overview/result-overview.module';
-
-import { ChartsModule } from 'ng2-charts';
 import { ResultDetailsPageModule } from '../pages/result-details/result-details.module';
 
 
@@ -68,6 +69,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
+
   ],
   imports: [
     BrowserModule,
@@ -101,6 +103,7 @@ export const firebaseConfig = {
     ResultDetailsPageModule,
     NgPipesModule,
     ChartsModule,
+    CountdownModule,
 
 
     FormsModule,
@@ -124,7 +127,8 @@ export const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider,
     AuthProvider,
-    InAppBrowser
+    InAppBrowser,
+    SimpleTimer,
 
   ]
 })
