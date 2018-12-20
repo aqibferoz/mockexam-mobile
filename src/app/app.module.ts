@@ -16,7 +16,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 // Providers
 import { ApiProvider } from '../providers/api/api';
 import { AuthProvider } from '../providers/auth/auth';
-import {InAppBrowser} from '@ionic-native/in-app-browser'
+// import {InAppBrowser} from '@ionic-native/in-app-browser'
 
 import { MyApp } from './app.component';
 import { RegisterPageModule } from '../pages/register/register.module';
@@ -124,7 +124,7 @@ export const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider,
     AuthProvider,
-    InAppBrowser
+    // InAppBrowser
 
   ]
 })

@@ -39,4 +39,16 @@ page-login {
        background-color: white !important;
        opacity: 0.2 !important;
    }
+   .button-md:hover:not(.disable-hover){
+    background-color: white !important;
+    color: white !important;
+   }
+   btn disable-hover button button-ios button-default button-default-ios button-block button-block-ios{
+    background-color: white !important;
+    color: white !important;
+   }
+   .button-ios{
+    // background-color: white !important;
+
+   }
 }
