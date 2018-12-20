@@ -159,16 +159,21 @@ getExamMocks(examId){
   return this.firestore.collection('chapter', ref=> ref.where('examId','==',examId)).snapshotChanges();
 }
 
-  /* COUPONS */
-  getCoupons(){
-    return this.firestore.collection('coupons').snapshotChanges();
-  }
-  getCoupon(id){
-    return this.firestore.doc("coupons/"+id).valueChanges();
-  }
-  removeCoupon(id){
-    return this.firestore.doc('coupons/'+id).delete();
-  }
+ /* COUPONS */
+ getCoupons(){
+  return this.firestore.collection('coupons').snapshotChanges();
+}
+
+getCouponWithId(couponId) {
+  return this.firestore.collection('coupons', resp => resp.where('couponId', '==', couponId)).valueChanges();
+}
+
+getCoupon(id){
+  return this.firestore.doc("coupons/"+id).valueChanges();
+}
+removeCoupon(id){
+  return this.firestore.collection('coupons').doc(id).delete();
+}
 
   /* USER COUPON */
 

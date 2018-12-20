@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ReqestExamPage } from '../reqest-exam/reqest-exam';
+//  import { ReqestExamPage } from '../reqest-exam/reqest-exam';
 import {map} from 'rxjs/operators'
 // Importing Providers
 import {ApiProvider} from '../../providers/api/api';
 import {AuthProvider} from '../../providers/auth/auth';
+import { ExamsDetailsUnpurchasedPage } from '../exams-details-unpurchased/exams-details-unpurchased';
 import { HomeExamsPage } from '../home-exams/home-exams';
-import { ExamsHistoryPageModule } from '../exams-history/exams-history.module';
+//import { HomeExamsPage } from '../home-exams/home-exams';
+//import { ExamsHistoryPageModule } from '../exams-history/exams-history.module';
 
 /**
  * Generated class for the ExamsPage page.
@@ -81,14 +83,19 @@ export class ExamsPage {
     });
 
   }
+  goExam() {
+
+    // this.router.navigate(['/dashboard/exam-details/' + examId]);
+    this.navCtrl.push(ExamsDetailsUnpurchasedPage);
+  }
+
+  ClickToHomePage(){
+    this.navCtrl.push(HomeExamsPage);
+  }
 
   }
 
-  // goExam(examId) {
 
-  //   // this.router.navigate(['/dashboard/exam-details/' + examId]);
-
-  // }
 
   // ClickToRequestExamPage(){
   //   this.navCtrl.push(ReqestExamPage)

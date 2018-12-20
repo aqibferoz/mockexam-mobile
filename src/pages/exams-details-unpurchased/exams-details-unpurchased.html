@@ -1,15 +1,15 @@
 
 <ion-header>
-    
+
     <img src="../../assets/images/gallery/1.jpg" width="400px" height="200px"/>
 
-    <div class="myOverlay">
+    <div class="myOverlay" >
     <ion-icon id="icon" name="arrow-round-back" (click) = "goBack()"></ion-icon>
-    <ion-title><b>FCPS PART 1</b></ion-title>
+    <ion-title ><b>{{examName}}</b></ion-title>
     <p class="details">Some other details about exams</p>
     </div>
-  
- 
+
+
 </ion-header>
 
 
@@ -20,11 +20,11 @@
         <ion-segment-button value="Details">
           Details
         </ion-segment-button>
-        
+
         <ion-segment-button value="Content">
           Content
         </ion-segment-button>
-        
+
         </ion-segment>
 
       </ion-grid>
@@ -57,19 +57,19 @@
             <ion-grid>
                 <ion-row>
                     <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
+
                     </ion-col>
                     <ion-col ion-col text-center no-padding col-4 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                         <button class="btn" ion-button (click)= "goExamInstructionsPage()" >Get free mock</button>
                           </ion-col>
                           <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
+
                             </ion-col>
                           <ion-col ion-col text-center no-padding col-4 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                               <button class="btn2" ion-button (click)= "buyNow()" >Buy Now</button>
                                 </ion-col>
                                 <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              
+
                                   </ion-col>
                     </ion-row>
             </ion-grid>
@@ -78,83 +78,84 @@
             </ion-list>
 
             <ion-list *ngSwitchCase="'Content'" no-lines>
-                
-                <ion-grid>
-      <ul>
-                    <ion-row>
-                        <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                            <li>
-                              Mock test 1 
-                            </li>  
+
+                <ion-grid *ngIf="mocks">
+      <ul *ngFor="let x of mocks">
+                    <ion-row   (click)="goExamInstructionsPage(x.id, x.free)" >
+                        <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6
+                        >
+                            <li >
+                                {{x?.mockExamName}}
+                            </li>
                           </ion-col>
-                          
+
                           <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                         
+
                           </ion-col>
                         <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                          <i class="fas fa-lock"></i>
+                            <i class="fa" [class.fa-lock]="!x.free" [class.fa-arrow-right]="x.free" aria-hidden="true"></i>
                         </ion-col>
-                   
-              </ion-row>
-                    
 
-              <ion-row>
+              </ion-row>
+
+
+              <!-- <ion-row>
                   <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                       <li>
                         Mock test 2
-                      </li>  
+                      </li>
                     </ion-col>
-                    
+
                     <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                   
+
                     </ion-col>
                   <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                     <i class="fas fa-lock"></i>
                   </ion-col>
-             
+
         </ion-row>
-      
+
         <ion-row>
             <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                 <li>
                   Mock test 3
-                </li>  
+                </li>
               </ion-col>
-              
+
               <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-             
+
               </ion-col>
             <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               <i class="fas fa-lock"></i>
             </ion-col>
-       
+
   </ion-row>
-      
+
   <ion-row>
       <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           <li>
-            Mock test 4 
-          </li>  
+            Mock test 4
+          </li>
         </ion-col>
-        
+
         <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-       
+
         </ion-col>
       <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <i class="fas fa-lock"></i>
       </ion-col>
- 
+
 </ion-row>
 
 <ion-row>
     <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <li>
-          Mock test 5 
-        </li>  
+          Mock test 5
+        </li>
       </ion-col>
-      
+
       <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-     
+
       </ion-col>
     <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
       <i class="fas fa-lock"></i>
@@ -165,12 +166,12 @@
 <ion-row>
     <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <li>
-          Mock test 6 
-        </li>  
+          Mock test 6
+        </li>
       </ion-col>
-      
+
       <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-     
+
       </ion-col>
     <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
       <i class="fas fa-lock"></i>
@@ -181,12 +182,12 @@
 <ion-row>
     <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <li>
-          Mock test 7 
-        </li>  
+          Mock test 7
+        </li>
       </ion-col>
-      
+
       <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-     
+
       </ion-col>
     <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
       <i class="fas fa-lock"></i>
@@ -197,44 +198,44 @@
 <ion-row>
     <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <li>
-          Mock test 8 
-        </li>  
+          Mock test 8
+        </li>
       </ion-col>
-      
+
       <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-     
+
       </ion-col>
     <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
       <i class="fas fa-lock"></i>
     </ion-col>
 
-</ion-row>
-      
+</ion-row> -->
+
       </ul>
 
 
 </ion-grid>
 
-          
+
 
 
 
                   <ion-grid>
                       <ion-row>
                           <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    
+
                           </ion-col>
                           <ion-col ion-col text-center no-padding col-4 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                               <button class="btn" ion-button (click)= "goExamInstructionsPage()" >Get free mock</button>
                                 </ion-col>
                                 <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    
+
                                   </ion-col>
                                 <ion-col ion-col text-center no-padding col-4 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                                     <button class="btn2" ion-button (click)= "buyNow()" >Buy Now</button>
                                       </ion-col>
                                       <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    
+
                                         </ion-col>
                           </ion-row>
                   </ion-grid>
