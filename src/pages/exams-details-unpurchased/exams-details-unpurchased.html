@@ -54,6 +54,7 @@
 
             </ul>
 
+            
             <ion-grid>
                 <ion-row>
                     <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -82,134 +83,21 @@
                 <ion-grid *ngIf="mocks">
       <ul *ngFor="let x of mocks">
                     <ion-row   (click)="goExamInstructionsPage(x.id, x.free)" >
-                        <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6
+                        <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6
                         >
                             <li >
                                 {{x?.mockExamName}}
                             </li>
                           </ion-col>
 
-                          <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                          <ion-col ion-col text-center no-padding col-4 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
 
                           </ion-col>
                         <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                             <i class="fa" [class.fa-lock]="!x.free" [class.fa-arrow-right]="x.free" aria-hidden="true"></i>
                         </ion-col>
 
-              </ion-row>
-
-
-              <!-- <ion-row>
-                  <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                      <li>
-                        Mock test 2
-                      </li>
-                    </ion-col>
-
-                    <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-                    </ion-col>
-                  <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                    <i class="fas fa-lock"></i>
-                  </ion-col>
-
-        </ion-row>
-
-        <ion-row>
-            <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                <li>
-                  Mock test 3
-                </li>
-              </ion-col>
-
-              <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-              </ion-col>
-            <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-              <i class="fas fa-lock"></i>
-            </ion-col>
-
-  </ion-row>
-
-  <ion-row>
-      <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-          <li>
-            Mock test 4
-          </li>
-        </ion-col>
-
-        <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-        </ion-col>
-      <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <i class="fas fa-lock"></i>
-      </ion-col>
-
-</ion-row>
-
-<ion-row>
-    <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <li>
-          Mock test 5
-        </li>
-      </ion-col>
-
-      <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-      </ion-col>
-    <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-      <i class="fas fa-lock"></i>
-    </ion-col>
-
-</ion-row>
-
-<ion-row>
-    <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <li>
-          Mock test 6
-        </li>
-      </ion-col>
-
-      <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-      </ion-col>
-    <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-      <i class="fas fa-lock"></i>
-    </ion-col>
-
-</ion-row>
-
-<ion-row>
-    <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <li>
-          Mock test 7
-        </li>
-      </ion-col>
-
-      <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-      </ion-col>
-    <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-      <i class="fas fa-lock"></i>
-    </ion-col>
-
-</ion-row>
-
-<ion-row>
-    <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <li>
-          Mock test 8
-        </li>
-      </ion-col>
-
-      <ion-col ion-col text-center no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-      </ion-col>
-    <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-      <i class="fas fa-lock"></i>
-    </ion-col>
-
-</ion-row> -->
+                      </ion-row>
 
       </ul>
 

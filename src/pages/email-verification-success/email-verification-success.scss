@@ -10,13 +10,18 @@ page-email-verification-success {
     //     margin-top: 5px !important;
     // }
     ion-icon{
-        font-size: 28px !important;
+        font-size: initial !important;
         font-weight: 500 !important;
         color:  white !important;
-        margin-top: 15px !important;
+        margin-top: 12px !important;
     }
-    .title{
-        text-align: center !important;
+    
+    .btn1  {
+        background-color: #5F43AB !important;
+    }
+    
+    .btn1:focus {     
+        background-color:#5F43AB !important;    
     }
     p{
         font-size: 16px;
@@ -54,4 +59,11 @@ page-email-verification-success {
         color: white !important;
         
     }
+    .back-button-text-ios {
+    margin-top: 10px !important;    
+    }
+    // .button-ios{
+    //     background-color: #F4F4F4 !important;
+    // }
+   
 }

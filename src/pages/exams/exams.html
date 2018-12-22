@@ -28,7 +28,7 @@
             </ion-col> -->
         <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6
         *ngFor="let x of mocks | filterBy:['categoryName']: y.categoryName">
-            <ion-card (click)="goExam()" *ngIf="x.preference">
+            <ion-card (click)="goExam()" *ngIf="x.preference && y.isPresent">
                 <ion-card-header>
                     <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
                 </ion-card-header>
@@ -68,16 +68,11 @@
 
               </ion-col>
 
-
-
         </ion-row>
         <br>
         <br>
         <br>
 
       </ion-grid>
-
-
-
 
   </ion-content>

@@ -2,7 +2,6 @@
 <ion-header>
 
     <ion-navbar transparent hideBackButton>
-        <ion-icon name="arrow-round-back" (click) = "goBack()"></ion-icon>
       <ion-title>Email <b>Verification</b></ion-title>
     </ion-navbar>
   
@@ -48,25 +47,20 @@
       </ion-col>
     </ion-row>
     <ion-row>
-        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-  
-        </ion-col>
-        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-input class="input1" text-left></ion-input>
-        </ion-col>
-        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-  
-          </ion-col>
-        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-input class="input1" text-left></ion-input>
-        </ion-col>
-        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-  
-          </ion-col>
-        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-input class="input1" text-left></ion-input>
-        </ion-col>
-        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        
+      <ion-input type="text" text-center #field1 (keyup)="gotoNextField(field2)" class="input1" maxlength = "1" tabindex="1"></ion-input>
+      _
+      <ion-input type="text" text-center #field2 (keyup)="gotoNextField(field3)" class="input1" maxlength = "1" tabindex="1"></ion-input>
+      _
+      <ion-input type="text" text-center #field3 (keyup)="gotoNextField(field4)" class="input1" maxlength = "1" tabindex="1"></ion-input>
+      _
+      <ion-input type="text" text-center #field4 (keyup)="gotoNextField(field5)" class="input1" maxlength = "1" tabindex="1"></ion-input>
+      _
+      <ion-input type="text" text-center #field5 (keyup)="gotoNextField(field6)"class="input1" maxlength = "1" tabindex="1"></ion-input>
+      _
+      <ion-input type="text" text-center #field6  class="input1" maxlength = "1" tabindex="1"></ion-input>
+      
+        <!-- <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
   
           </ion-col>
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -84,6 +78,18 @@
         <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <ion-input class="input1" text-left></ion-input>
         </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input class="input1" text-left></ion-input>
+        </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+  
+          </ion-col>
+        <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+            <ion-input class="input1" text-left></ion-input>
+        </ion-col> -->
       </ion-row><br><br>
 
       <ion-row>
@@ -109,13 +115,13 @@
                   </ion-col>
             </ion-row>
             <ion-row>
-                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-col ion-col text-center no-padding col-3 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
   
                 </ion-col>
-                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-col ion-col text-center no-padding col-5 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                   <a>Resend Code</a>
                 </ion-col>
-                <ion-col ion-col text-center no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-col ion-col text-center no-padding col-3 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
   
                     </ion-col>
               </ion-row>

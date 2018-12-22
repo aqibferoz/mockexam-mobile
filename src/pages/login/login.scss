@@ -22,12 +22,27 @@ page-login {
        font-weight: bold;
        font-size: 15px;
    }
+//    button:active{
+//     background:olive;
+// }
+
+
+// button:focus{
+//     background:olive;
+// }
    .btn{
        background-color: white;
        color: #5F43AB !important;
        border-radius: 8px !important;
        font-weight: bold !important;
    }
+   .btn:active{
+    background:white !important;
+}
+   .btn:focus{
+    background: white !important;
+   }
+   
    .btn1{
        background-color: #5F43AB;
        border-radius: 8px !important;
@@ -35,6 +50,14 @@ page-login {
        border: 1px solid white;
        
    }
+   .btn1:active{
+    background: #5F43AB !important;
+
+   }
+   .btn1:focus{
+    background: white !important;
+   }
+
    hr{
        background-color: white !important;
        opacity: 0.2 !important;
@@ -47,8 +70,5 @@ page-login {
     background-color: white !important;
     color: white !important;
    }
-   .button-ios{
-    // background-color: white !important;
-
-   }
+   
 }

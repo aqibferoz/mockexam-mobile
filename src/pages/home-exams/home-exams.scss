@@ -4,7 +4,10 @@ page-home-exams {
     }
     ion-header{
         background-color: #5F43AB !important;
-        height: 100px;
+        height: 125px !important;
+    }
+    page-home-exams ion-header{
+        height: 100% !important;
     }
     ion-toolbar{
         background-color: #5F43AB !important;
@@ -12,7 +15,8 @@ page-home-exams {
         text-align: center !important;
     }
     ion-segment{
-        margin-left: 12px !important;
+        // margin-left: 12px !important;
+        margin: auto !important;
         background-color: #5F43AB !important;
         width: 350px !important;
         color: white !important;
@@ -51,6 +55,10 @@ page-home-exams {
         background-color: #5F43AB;
         border-radius: 8px !important;
         color:white !important; 
+    }
+    .btn1:focus{
+        background-color: #5F43AB !important;
+
     }
     .input1{
         border-bottom: 1px solid #5F43AB;
@@ -164,5 +172,16 @@ page-home-exams {
     }
     a{
         color: grey !important;
+    }
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+        border-color: transparent !important;
+        color: white !important;
+        opacity: 1;
+    }
+    .segment-md .segment-button{
+        color: whitesmoke !important;
+    }
+    .toolbar .toolbar-title{
+        text-align: center !important;
     }
 }

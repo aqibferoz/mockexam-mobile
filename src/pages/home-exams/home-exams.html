@@ -6,7 +6,7 @@
   </ion-navbar>
   <br>
   <!-- <ion-toolbar> -->
-  <ion-segment [(ngModel)]="requests">
+  <ion-segment align-middle [(ngModel)]="requests">
 
     <ion-segment-button value="home">
       Home
@@ -25,12 +25,12 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding >
   <div [ngSwitch]="requests">
 
     <!-- Home -->
 
-    <ion-list *ngSwitchCase="'home'" no-lines>
+    <ion-list *ngSwitchCase="'home'" no-lines style="margin-top: 5px !important;">
       <ion-grid>
 
         <ion-row>
@@ -45,43 +45,20 @@
 
 
 
-        <ion-row>
-          <!-- <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-row text-center style="margin: 0 auto !important; text-align: center !important;">
 
-        </ion-col> -->
-          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
-          </ion-col>
-          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-          </ion-col>
-          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
-          </ion-col>
-          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-          </ion-col>
-          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
-          </ion-col>
-          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-          </ion-col>
-          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
-          </ion-col>
-          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-          </ion-col>
-          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
-          </ion-col>
-          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-          </ion-col>
-          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
-          </ion-col>
+            <ion-input type="text" text-center #field1 (keyup)="gotoNextField(field2)" class="input1" maxlength = "1" tabindex="1"></ion-input>
+            _
+            <ion-input type="text" text-center #field2 (keyup)="gotoNextField(field3)" class="input1" maxlength = "1" tabindex="1"></ion-input>
+            _
+            <ion-input type="text" text-center #field3 (keyup)="gotoNextField(field4)" class="input1" maxlength = "1" tabindex="1"></ion-input>
+            _
+            <ion-input type="text" text-center #field4 (keyup)="gotoNextField(field5)" class="input1" maxlength = "1" tabindex="1"></ion-input>
+            _
+            <ion-input type="text" text-center #field5 (keyup)="gotoNextField(field6)"class="input1" maxlength = "1" tabindex="1"></ion-input>
+            _
+            <ion-input type="text" text-center #field6  class="input1" maxlength = "1" tabindex="1"></ion-input>
+            
         </ion-row><br><br>
 
         <ion-row>
@@ -111,7 +88,7 @@
 
 
           </ion-col>
-          <ion-col ion-col text-left no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 id="col">
+          <ion-col ion-col text-right no-padding col-4 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 id="col">
 
             <h5 style="margin-top: 5px !important;">Reshuffle MCQs</h5>
           </ion-col>
@@ -146,13 +123,11 @@
 
 
           </ion-col>
-          <ion-col ion-col text-left no-padding col-2 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 id="col">
+          <ion-col ion-col text-right no-padding col-2 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 id="col">
 
             <h5>Show All</h5>
           </ion-col>
         </ion-row>
-
-        <hr>
 
 
       </ion-grid>
@@ -190,29 +165,24 @@
         </ion-row>
 
       </ion-grid>
-      <br>
-      <hr>
+      
+      <ion-footer>
+        <ion-grid style="background-color: white !important;">
 
-      <br>
-
-      <ion-grid style="background-color: white !important;">
-
-        <ion-row>
-          <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-            <p id="paragraph">You can always add more exams.</p>
-            <button class="btn2" ion-button (click)="ClickToExamsPreferencesPage()">Add More Exams</button>
-
-          </ion-col>
-
-
-
-        </ion-row>
-        <br>
-        <br>
-        <br>
-
-      </ion-grid>
-
+          <ion-row>
+            <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+              <p id="paragraph">You can always add more exams.</p>
+              <button class="btn2" ion-button (click)="ClickToExamsPreferencesPage()">Add More Exams</button>
+  
+            </ion-col>
+  
+          </ion-row>
+          <br>
+          
+        </ion-grid>
+  
+      </ion-footer>
+     
 
 
 

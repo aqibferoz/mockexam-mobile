@@ -7,6 +7,7 @@ import { PurchaseExamPage } from '../purchase-exam/purchase-exam';
 import {ApiProvider} from '../../providers/api/api';
 import {AuthProvider} from '../../providers/auth/auth';
 import {map} from 'rxjs/operators';
+import { HomeExamsPage } from '../home-exams/home-exams';
 
 /**
  * Generated class for the ExamsDetailsUnpurchasedPage page.
@@ -83,5 +84,8 @@ export class ExamsDetailsUnpurchasedPage {
 
   buyNow(){
     this.navCtrl.push(PurchaseExamPage)
+  }
+  goBack(){
+    this.navCtrl.push(HomeExamsPage);
   }
 }

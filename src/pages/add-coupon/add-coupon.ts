@@ -84,4 +84,7 @@ export class AddCouponPage {
   goBack(){
     this.navCtrl.push(HomeExamsPage);
   }
+  gotoNextField(nextElement){
+    nextElement.setFocus();
+}
 }

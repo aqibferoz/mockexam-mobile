@@ -1,109 +1,149 @@
 page-exam-preferences {
-    ion-content{
-        background-color: #F4F4F4 !important;
-        // margin-top: 15px !important;
-    }
-    ion-header{
-        background-color: #5F43AB !important;
-        height: 65px;
-    }
-    #icon{
-        font-size: 28px !important;
-         font-weight: 500 !important;
-         color:  white !important;
-         margin-top: 15px !important;
-    }
-    #title{
-        // padding-top: 20px !important;
-    }
-    p{
-        font-size: 16px;
-        font-weight: 100;
-        text-align: justify;
-    }
-    .input{
-        color:black !important;
-    }
-    // .back-button.show-back-button{
-    //     display: none !important;
-    // }
-    .btn1{
-        background-color: #F4F4F4;
-        border-radius: 15px !important;
-        color:black !important;
-        font-size: 0.9em !important;
-        height: 18px !important;
-        width: 100px !important;
+  ion-content {
+    background-color: #F4F4F4 !important;
+    // margin-top: 15px !important;
+  }
 
-    }
-    ion-card-title{
-        margin-top: -1em !important;
-    }
-    h1{
-        text-align: center !important;
-        color: black !important;
-        // padding-top: 9px !important;
-    }
-    .labelsuccess{
-        background-color: green;
-        color: white;
-    }
+  ion-header {
+    background-color: #5F43AB !important;
+    height: 65px;
+  }
 
-    .labelfailure{
-        background-color: red;
-        color: white;
-    }
-    #para{
-        // padding-top: 5px !important;
-        line-height: 3px !important;
-        font-size: 16px;
-        font-weight: 100;
-        text-align: center !important;
-        color: black !important;
-    }
-    ion-icon{
-        font-size: 1.73em !important;
-    }
-    ion-card-content{
-        word-spacing: normal !important;
-    }
-    #card-p{
-        word-spacing: normal !important;
-        margin-top: -1.5em !important;
-        font-size: x-small !important;
-   }
-   ion-card{
+  #icon {
+    font-size: initial !important;
+    font-weight: 500 !important;
+    color: white !important;
+    margin-top: 15px !important;
+  }
+
+  .back-button-icon-md {
+    font-size: initial !important;
+    // font-weight: 500 !important;
+    color: white !important;
+  }
+
+  .toolbar-title-md {
+    padding: 0 33px !important;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 100;
+    text-align: justify;
+  }
+
+  .input {
+    color: black !important;
+  }
+
+  .bar-button-default-md,
+  .bar-button-clear-md-default,
+  .bar-button-md-default {
+    display: inline !important;
+    margin-top: 10px !important;
+
+  }
+
+  .bar-button-default-ios,
+  .bar-button-default.bar-button-ios-default,
+  .bar-button-clear-ios-default {
+    display: inline !important;
+    margin-top: 5px !important;
+
+  }
+
+  .back-button-icon-ios {
+    font-size: initial !important;
+  }
+
+  .btn1 {
+    background-color: #F4F4F4;
+    border-radius: 15px !important;
+    color: black !important;
+    font-size: 0.9em !important;
+    height: 18px !important;
+    width: 100px !important;
+
+  }
+
+  ion-card-title {
+    margin-top: -1em !important;
+  }
+
+  h1 {
+    text-align: center !important;
+    color: black !important;
+    // padding-top: 9px !important;
+  }
+
+  .labelsuccess {
+    background-color: green;
+    color: white;
+  }
+
+  .labelfailure {
+    background-color: red;
+    color: white;
+  }
+
+  #para {
+    // padding-top: 5px !important;
+    line-height: 3px !important;
+    font-size: 16px;
+    font-weight: 100;
+    text-align: center !important;
+    color: black !important;
+  }
+
+  ion-icon {
+    font-size: 1.73em !important;
+  }
+
+  ion-card-content {
+    word-spacing: normal !important;
+  }
+
+  #card-p {
+    word-spacing: normal !important;
+    margin-top: -1.5em !important;
+    font-size: x-small !important;
+  }
+
+  ion-card {
     border-radius: 8px !important;
 
-   }
-   hr{
+  }
+
+  hr {
     height: 2px !important;
 
-   }
-   #paragraph{
+  }
+
+  #paragraph {
     word-spacing: normal !important;
     text-align: center !important;
 
-   }
-   .btn2{
-       text-align: center !important;
-       width: 280px !important;
+  }
+
+  .btn2 {
+    text-align: center !important;
+    width: 280px !important;
     background-color: white !important;
     border-radius: 8px !important;
     border-color: #5F43AB !important;
     border: 1px solid white;
-    color:#5F43AB !important;
+    color: #5F43AB !important;
     font-weight: 400 !important;
 
-}
+  }
 
-.btn{
+  .btn {
     text-align: center !important;
     width: 280px !important;
- background-color: #5F43AB !important;
- border-radius: 8px !important;
- color:white !important;
- font-weight: 400 !important;
+    background-color: #5F43AB !important;
+    border-radius: 8px !important;
+    color: white !important;
+    font-weight: 400 !important;
 
-}
+  }
 }

@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar transparent>
-      <ion-icon name="arrow-round-back" (click) = "goBack()"></ion-icon>
+      <!-- <ion-icon name="arrow-round-back" (click) = "goBack()"></ion-icon> -->
         <ion-title>Add <b>Coupon</b></ion-title>
     </ion-navbar>
 
@@ -24,44 +24,21 @@
 
 
 
-        <ion-row>
-            <!-- <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <ion-row text-center style="margin: 0 auto !important; text-align: center !important;">
 
-            </ion-col> -->
-            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
-            </ion-col>
-            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-              </ion-col>
-            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
-            </ion-col>
-            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-              </ion-col>
-            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
-            </ion-col>
-            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-              </ion-col>
-            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
-            </ion-col>
-            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-              </ion-col>
-            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
-            </ion-col>
-            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-
-              </ion-col>
-            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                <ion-input type="text" maxlength="1" class="input1" text-left></ion-input>
-            </ion-col>
-          </ion-row><br><br>
+            <ion-input type="text" text-center #field1 (keyup)="gotoNextField(field2)" class="input1" maxlength = "1" tabindex="1"></ion-input>
+            _
+            <ion-input type="text" text-center #field2 (keyup)="gotoNextField(field3)" class="input1" maxlength = "1" tabindex="1"></ion-input>
+            _
+            <ion-input type="text" text-center #field3 (keyup)="gotoNextField(field4)" class="input1" maxlength = "1" tabindex="1"></ion-input>
+            _
+            <ion-input type="text" text-center #field4 (keyup)="gotoNextField(field5)" class="input1" maxlength = "1" tabindex="1"></ion-input>
+            _
+            <ion-input type="text" text-center #field5 (keyup)="gotoNextField(field6)"class="input1" maxlength = "1" tabindex="1"></ion-input>
+            _
+            <ion-input type="text" text-center #field6  class="input1" maxlength = "1" tabindex="1"></ion-input>
+            
+        </ion-row><br><br>
 
           <ion-row>
               <ion-col ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>

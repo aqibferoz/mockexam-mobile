@@ -11,12 +11,7 @@ page-balance-transactions {
         color: white !important;
         text-align: center !important;
     }
-    ion-icon{
-        font-size: 28px !important;
-        font-weight: 500 !important;
-        color:  white !important;
-        margin-top: 15px !important;
-    }
+   
     ion-title{
         text-align: center !important;
         margin: 0 auto !important;
@@ -24,9 +19,45 @@ page-balance-transactions {
     .toolbar .toolbar-title{
         font-size: 17px !important;
     }
-    .back-button.show-back-button{
-        display: none !important;
-    }
+   
+
+
+
+
+
+    
+    .toolbar-title-md{
+        margin-left: -3rem  !important
+        }
+        .toolbar-title{
+            width: 100% !important;
+        }
+        .back-button-icon-md{
+            font-size: initial !important;
+        }
+        .back-button-icon-ios {
+            font-size: initial !important;
+        }
+        .bar-button-default-md,
+      .bar-button-clear-md-default,
+      .bar-button-md-default {
+        display: inline !important;
+        margin-top: 10px !important;
+    
+      }
+    
+      .bar-button-default-ios,
+      .bar-button-default.bar-button-ios-default,
+      .bar-button-clear-ios-default {
+        display: inline !important;
+        margin-top: 5px !important;
+    
+      }
+
+
+
+
+
     .scroll-content{
         padding: initial !important;
     }

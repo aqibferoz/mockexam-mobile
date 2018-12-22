@@ -98,6 +98,8 @@ sname;
     this.navCtrl.push(ExamsDetailsUnpurchasedPage , {passId : passId})
   }
 
+  
+
   goAddCouponPage(){
     this.navCtrl.push(AddCouponPage)
   }
@@ -107,7 +109,7 @@ sname;
   goExamsHistoryPage(){
     this.navCtrl.push(ExamsHistoryPage)
   }
-  ClickToExamsPreferencesPage(){
+  goExamPreferencesPage(){
     this.navCtrl.push(ExamPreferencesPage)
   }
   goReportPage(){
@@ -116,4 +118,8 @@ sname;
   goSignoutPage(){
     this.navCtrl.push(SignOutPage)
   }
+
+  gotoNextField(nextElement){
+        nextElement.setFocus();
+    }
 }
