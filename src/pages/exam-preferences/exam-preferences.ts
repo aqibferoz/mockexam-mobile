@@ -6,6 +6,7 @@ import {map} from 'rxjs/operators';
 import {ApiProvider} from '../../providers/api/api';
 import {AuthProvider} from '../../providers/auth/auth';
 import { ExamsPage } from '../exams/exams';
+import { ReqestExamPage } from '../reqest-exam/reqest-exam';
 
 /**
  * Generated class for the ExamPreferencesPage page.
@@ -139,7 +140,9 @@ export class ExamPreferencesPage {
 goBack() {
 
 }
-
+ClickToRequestExamPage(){
+  this.navCtrl.push(ReqestExamPage)
+}
 ClickToExamsPage() {
   this.navCtrl.push(ExamsPage);
 }

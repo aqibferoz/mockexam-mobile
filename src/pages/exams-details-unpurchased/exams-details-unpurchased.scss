@@ -16,8 +16,12 @@ page-exams-details-unpurchased {
     }
     li{
         font-size: 18px !important;
-        margin: 7px;
+        margin: 7px !important;
 
+    }
+    ion-scroll {
+        white-space: nowrap;
+        height: 965px !important;
     }
     .fas{
         color: #5F43AB !important;
@@ -130,7 +134,7 @@ page-exams-details-unpurchased {
 .myOverlay{
     width: 100%;
     height: 60px;
-    position: absolute;
+    position: inherit !important;
     z-index: 99;
     bottom: 0px;
     opacity: 6.5;

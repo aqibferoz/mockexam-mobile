@@ -14,7 +14,7 @@
 
 
 <ion-content style="margin-top: 140px !important;">
-  <ion-grid style="padding-left: 50px !important;">
+  <ion-grid style="text-align: -webkit-center !important;">
     <ion-segment [(ngModel)]="requests">
 
         <ion-segment-button value="Details">
@@ -78,14 +78,15 @@
 
             </ion-list>
 
+            
             <ion-list *ngSwitchCase="'Content'" no-lines>
-
+                <ion-scroll scrollY="true">
                 <ion-grid *ngIf="mocks">
+                  
       <ul *ngFor="let x of mocks">
-                    <ion-row   (click)="goExamInstructionsPage(x.id, x.free)" >
-                        <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6
-                        >
-                            <li >
+                    <ion-row (click)="goExamInstructionsPage(x.id, x.free)" >
+                        <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            <li>
                                 {{x?.mockExamName}}
                             </li>
                           </ion-col>
@@ -100,37 +101,33 @@
                       </ion-row>
 
       </ul>
+    
 
 
-</ion-grid>
+      </ion-grid>
 
-
-
-
-
-                  <ion-grid>
+                   <ion-grid>
                       <ion-row>
                           <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
 
                           </ion-col>
                           <ion-col ion-col text-center no-padding col-4 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                              <button class="btn" ion-button (click)= "goExamInstructionsPage()" >Get free mock</button>
-                                </ion-col>
-                                <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                              <button class="btn" ion-button (click)= "goExamInstructionsPage()">Get free mock</button>
+                          </ion-col>
+                            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
 
-                                  </ion-col>
-                                <ion-col ion-col text-center no-padding col-4 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                                    <button class="btn2" ion-button (click)= "buyNow()" >Buy Now</button>
-                                      </ion-col>
-                                      <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                            </ion-col>
+                            <ion-col ion-col text-center no-padding col-4 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                                    <button class="btn2" ion-button (click)= "buyNow()">Buy Now</button>
+                            </ion-col>
+                            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
 
-                                        </ion-col>
-                          </ion-row>
+                            </ion-col>
+                      </ion-row>
                   </ion-grid>
+                </ion-scroll>
             </ion-list>
-
-
-
+          
         </div>
 
 

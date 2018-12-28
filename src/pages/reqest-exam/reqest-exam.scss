@@ -34,6 +34,13 @@ page-reqest-exam {
         color:#5F43AB !important;
         
     }
+    .btn1:active{
+        background: #F4F4F4 !important;
+    
+       }
+       .btn1:focus{
+        background: white !important;
+       }
     p{
         margin-top: -2px !important;
         font-size: 17px !important;
@@ -41,9 +48,49 @@ page-reqest-exam {
     #para{
         margin-top: -2px !important;
     }
-    .back-button.show-back-button{
-        display: none !important;
+
+
+
+
+
+    .back-button{
+        display: initial !important;
     }
+    .toolbar-title-md{
+        margin-left: -3rem  !important;
+        text-align: center !important;
+        }
+        .toolbar-title{
+            width: 100% !important;
+        }
+        .back-button-icon-md{
+            font-size: initial !important;
+        }
+        .back-button-icon-ios {
+            font-size: initial !important;
+        }
+        .bar-button-default-md,
+      .bar-button-clear-md-default,
+      .bar-button-md-default {
+        display: inline !important;
+        margin-top: 10px !important;
+    
+      }
+    
+      .bar-button-default-ios,
+      .bar-button-default.bar-button-ios-default,
+      .bar-button-clear-ios-default {
+        display: inline !important;
+        margin-top: 10px !important;
+    
+      }
+
+
+
+
+
+
+
     .input{
         font-size: 10px !important;
     }

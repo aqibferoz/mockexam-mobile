@@ -26,5 +26,7 @@ export class ForgotPasswordCodePage {
   resetPassword(){
     this.navCtrl.push(ResetPasswordPage);
   }
-
+  gotoNextField(nextElement){
+    nextElement.setFocus();
+}
 }
