@@ -1,8 +1,6 @@
-import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { ForgotPasswordPage } from "../forgot-password/forgot-password";
-import { ExamPreferencesPage } from "../exam-preferences/exam-preferences";
-
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 // Importing Providers
 import { ApiProvider } from "../../providers/api/api";
 import { AuthProvider } from "../../providers/auth/auth";
@@ -29,14 +27,10 @@ export class LoginPage {
 
   err = "";
 
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    private auth: AuthProvider,
-    private api: ApiProvider
-  ) {
-    if (localStorage.getItem("uid")) {
-      this.navCtrl.push(ExamPreferencesPage);
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private auth: AuthProvider, private api: ApiProvider, public loadingCtrl: LoadingController) {
+    if (localStorage.getItem('uid')) {
+      this.navCtrl.push(HomeExamsPage);
     }
   }
 
@@ -50,26 +44,34 @@ export class LoginPage {
     this.navCtrl.push("RegisterPage");
   }
   ClickToLogin() {
+
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+
+    loading.present();
+
+
+
     // console.log('Login Clicked');
     // this.navCtrl.push(ExamsPage);
-    if (this.user.email !== "" && this.user.password !== "") {
-      this.auth.login(this.user.email, this.user.password).then(
-        resp => {
-          console.log(resp);
-          // localStorage.setItem('data',resp.user.displayName);
-          this.auth.saveToken(resp.user.uid);
-          this.api
-            .updateStudent(localStorage.getItem("uid"), {
-              lastLogin: new Date()
-            })
-            .then(response => {
-              // this.router.navigate(['/dashboard']);
-              this.navCtrl.push(HomeExamsPage);
-            });
-        },
-        err => this.showErr(err.message)
-      );
+    if (this.user.email !== '' && this.user.password !== '') {
+      this.auth.login(this.user.email, this.user.password).then(resp => {
+        console.log(resp);
+
+        // localStorage.setItem('data',resp.user.displayName);
+        this.auth.saveToken(resp.user.uid);
+        this.api.updateStudent(localStorage.getItem('uid'), { lastLogin: new Date() }).then(response => {
+          // this.router.navigate(['/dashboard']);
+          loading.dismiss();
+          this.navCtrl.push(HomeExamsPage);
+        })
+      }, err => this.showErr(err.message))
+        .catch(err => {
+          loading.dismiss();
+        })
     }
+
     //this.navCtrl.push()
   }
 
