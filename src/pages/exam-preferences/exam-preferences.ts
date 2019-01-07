@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, Loading } from 'ionic-angular';
 import {map} from 'rxjs/operators';
 
 // Importing Providers
@@ -25,10 +25,17 @@ export class ExamPreferencesPage {
   user: any;
   userExamPref = new Array();
   categories: any;
+  loading: any;
   mocks: any;
   constructor(private navCtrl: NavController, public navParams: NavParams,
-              private auth: AuthProvider, private api: ApiProvider) {
-
+              private auth: AuthProvider, private api: ApiProvider, public loadingCtrl: LoadingController) {
+                
+                 this.loading = this.loadingCtrl.create({
+                  content: 'Please wait...'
+                });
+              
+                this.loading.present();
+              
                }
 
   ionViewDidLoad() {
@@ -70,6 +77,7 @@ export class ExamPreferencesPage {
       }))
     ).subscribe(resp => {
       this.categories = resp;
+      this.loading.dismiss();
     });
 
   }
@@ -99,6 +107,7 @@ export class ExamPreferencesPage {
         }))
       ).subscribe(resp => {
         this.mocks = resp; /*  user -groupBy Filter to play with this */
+        this.loading.dismiss();
       });
 
     } else{
@@ -141,6 +150,7 @@ goBack() {
 
 }
 ClickToRequestExamPage(){
+  
   this.navCtrl.push(ReqestExamPage)
 }
 ClickToExamsPage() {
