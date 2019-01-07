@@ -21,12 +21,14 @@ export class ReqestExamPage {
   categorys: any;
   categoryName: string;
   examName: string;
+  studentName: string;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private alertCtrl: AlertController, private api: ApiProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReqestExamPage');
+    this.studentName = localStorage.getItem('name');
     this.api.getCategorys().pipe(map(
       list =>
         list.map(
@@ -65,32 +67,32 @@ export class ReqestExamPage {
   ClickToExamsPage() {
     this.navCtrl.push(ExamsPage)
   }
-  popUp() {
-    let alert = this.alertCtrl.create();
-    alert.setTitle('Exam Category');
+  // popUp() {
+  //   let alert = this.alertCtrl.create();
+  //   alert.setTitle('Exam Category');
 
-    alert.addInput({
-      type: 'radio',
-      label: 'Medical',
-      value: 'blue',
-      checked: true
-    });
+  //   alert.addInput({
+  //     type: 'radio',
+  //     label: 'Medical',
+  //     value: 'blue',
+  //     checked: true
+  //   });
 
-    alert.addInput({
-      type: 'radio',
-      label: 'Engineering',
-      value: 'blue',
-      // checked: true
-    });
+  //   alert.addInput({
+  //     type: 'radio',
+  //     label: 'Engineering',
+  //     value: 'blue',
+  //     // checked: true
+  //   });
 
 
-    alert.addButton({
-      text: 'Okay!',
-      handler: data => {
-        // this.testRadioOpen = false;
-        // this.testRadioResult = data;
-      }
-    });
-    alert.present();
-  }
+  //   alert.addButton({
+  //     text: 'Okay!',
+  //     handler: data => {
+  //       // this.testRadioOpen = false;
+  //       // this.testRadioResult = data;
+  //     }
+  //   });
+  //   alert.present();
+  // }
 }

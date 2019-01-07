@@ -59,7 +59,7 @@ export class LoginPage {
       this.auth.login(this.user.email, this.user.password).then(resp => {
         console.log(resp);
 
-        // localStorage.setItem('data',resp.user.displayName);
+        //localStorage.setItem('data', resp.user.displayName);
         this.auth.saveToken(resp.user.uid);
         this.api.updateStudent(localStorage.getItem('uid'), { lastLogin: new Date() }).then(response => {
           // this.router.navigate(['/dashboard']);

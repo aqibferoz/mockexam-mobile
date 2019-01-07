@@ -47,6 +47,7 @@ export class HomeExamsPage {
       this.student = resp;
       // console.log(this.student);
       this.userPref = this.student.examPreference;
+      localStorage.setItem('name', this.student.name);
     });
   }
 
@@ -124,7 +125,8 @@ export class HomeExamsPage {
     this.navCtrl.push(ReportPage);
   }
   goSignoutPage() {
-    this.navCtrl.push(SignOutPage);
+    localStorage.clear();
+    this.navCtrl.push(LoginPage);
   }
 
   gotoNextField(nextElement) {
