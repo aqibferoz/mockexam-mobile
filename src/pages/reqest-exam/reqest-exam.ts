@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ExamsPage } from '../exams/exams';
+import { ApiProvider } from '../../providers/api/api';
+import { map } from 'rxjs/operators';
+import { HomeExamsPage } from '../home-exams/home-exams';
 
 /**
  * Generated class for the ReqestExamPage page.
@@ -15,14 +18,51 @@ import { ExamsPage } from '../exams/exams';
   templateUrl: 'reqest-exam.html',
 })
 export class ReqestExamPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,private alertCtrl: AlertController) {
+  categorys: any;
+  categoryName: string;
+  examName: string;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private alertCtrl: AlertController, private api: ApiProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReqestExamPage');
+    this.api.getCategorys().pipe(map(
+      list =>
+        list.map(
+          items => {
+            console.log();
+            return { id: items.payload.doc.id, ...items.payload.doc.data() }
+          }
+        )
+    ))
+      .subscribe(resp => {
+        this.categorys = resp;
+        // this.showSpinner = false;
+        console.log(resp);
+      })
+
   }
-  ClickToExamsPage(){
+  onChangeMock(event) {
+    this.categoryName = event;
+    console.log(this.categoryName);
+  }
+  requestExam() {
+    let e = {
+      categoryName: this.categoryName,
+      examName: this.examName
+    }
+
+    this.api.addRequestedExam(e).then(
+      () => {
+        this.categoryName = null;
+        this.examName = null;
+        this.navCtrl.push(HomeExamsPage)
+      }
+    )
+  }
+
+  ClickToExamsPage() {
     this.navCtrl.push(ExamsPage)
   }
   popUp() {
@@ -43,7 +83,7 @@ export class ReqestExamPage {
       // checked: true
     });
 
-  
+
     alert.addButton({
       text: 'Okay!',
       handler: data => {

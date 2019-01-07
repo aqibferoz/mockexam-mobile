@@ -15,31 +15,6 @@ export class ApiProvider {
     console.log('Hello ApiProvider Provider');
   }
 
-
-
-   // create student
-
-   addStudent(id, data) {
-    return this.firestore.collection('students').doc(id).set(data);
-  }
-
-  getStudent(id) {
-    return this.firestore.collection('students').doc(id).valueChanges();
-  }
-
-  getStudents() {
-    return this.firestore.collection('students').snapshotChanges();
-  }
-
-  deleteStudent(id) {
-    return this.firestore.collection('students').doc(id).delete();
-  }
-
-  updateStudent(id, data) {
-    return this.firestore.collection('students').doc(id).update(data);
-  }
-
-
   // Category services
 
   getCategory(id) {
@@ -48,6 +23,10 @@ export class ApiProvider {
 
   getCategorys() {
     return this.firestore.collection('category').snapshotChanges();
+  }
+
+  getCategorysWhereExam(examId) {
+    return this.firestore.collection('category', resp => resp.where('examId', '==', examId)).snapshotChanges();
   }
 
   // Subject services
@@ -94,9 +73,31 @@ export class ApiProvider {
     return this.firestore.collection('mcqs', resp => resp.where('mockExamId', '==', mockExamId)).snapshotChanges();
   }
 
-   // mocks api
+  // create student
 
-   getMock(id) {
+  addStudent(id, data) {
+    return this.firestore.collection('students').doc(id).set(data);
+  }
+
+  getStudent(id) {
+    return this.firestore.collection('students').doc(id).valueChanges();
+  }
+
+  getStudents() {
+    return this.firestore.collection('students').snapshotChanges();
+  }
+
+  deleteStudent(id) {
+    return this.firestore.collection('students').doc(id).delete();
+  }
+
+  updateStudent(id, data) {
+    return this.firestore.collection('students').doc(id).update(data);
+  }
+
+  // mocks api
+
+  getMock(id) {
     return this.firestore.collection('mocks').doc(id).valueChanges();
   }
 
@@ -119,28 +120,28 @@ export class ApiProvider {
   }
 
   /* ADD MCQ To bookmark */
-  addStudentBookmark(mcq){
+  addStudentBookmark(mcq) {
     mcq.studentId = localStorage.getItem('uid');
     return this.firestore.collection('mcq_bookmarks').add(mcq);
   }
 
   /* Get a single student bookmarks */
-  getStudentBookmarks(){
+  getStudentBookmarks() {
     let id = localStorage.getItem('uid');
-    return this.firestore.collection('mcq_bookmarks',ref=> ref.where('studentId','==',id)).snapshotChanges();
+    return this.firestore.collection('mcq_bookmarks', ref => ref.where('studentId', '==', id)).snapshotChanges();
   }
-  removeBookmark(id){
-    return this.firestore.doc('mcq_bookmarks/'+id).delete();
+  removeBookmark(id) {
+    return this.firestore.doc('mcq_bookmarks/' + id).delete();
   }
 
   /* TRANSACTIONS */
-  getStudentTransactions(){
+  getStudentTransactions() {
     let id = localStorage.getItem('uid');
-    return this.firestore.collection('transactions', ref=> ref.where('studentId','==',id)).snapshotChanges();
+    return this.firestore.collection('transactions', ref => ref.where('studentId', '==', id)).snapshotChanges();
   }
 
   /* CATEGORY */
-  getAllCategories(){
+  getAllCategories() {
     return this.firestore.collection('category').snapshotChanges();
   }
 
@@ -150,53 +151,63 @@ export class ApiProvider {
 
   /* MCQs */
 
-  getMockMcqs(mockId){
-    return this.firestore.collection('mcqs', ref=> ref.where('chapterId','==',mockId)).snapshotChanges();
+  getMockMcqs(mockId) {
+    return this.firestore.collection('mcqs', ref => ref.where('chapterId', '==', mockId)).snapshotChanges();
   }
 
 
-getExamMocks(examId){
-  return this.firestore.collection('chapter', ref=> ref.where('examId','==',examId)).snapshotChanges();
-}
+  getExamMocks(examId) {
+    return this.firestore.collection('chapter', ref => ref.where('examId', '==', examId)).snapshotChanges();
+  }
 
- /* COUPONS */
- getCoupons(){
-  return this.firestore.collection('coupons').snapshotChanges();
-}
+  /* COUPONS */
+  getCoupons() {
+    return this.firestore.collection('coupons').snapshotChanges();
+  }
 
-getCouponWithId(couponId) {
-  return this.firestore.collection('coupons', resp => resp.where('couponId', '==', couponId)).valueChanges();
-}
+  getCouponWithId(couponId) {
+    return this.firestore.collection('coupons', resp => resp.where('couponId', '==', couponId)).valueChanges();
+  }
 
-getCoupon(id){
-  return this.firestore.doc("coupons/"+id).valueChanges();
-}
-removeCoupon(id){
-  return this.firestore.collection('coupons').doc(id).delete();
-}
+  getCoupon(id) {
+    return this.firestore.doc("coupons/" + id).valueChanges();
+  }
+  removeCoupon(id) {
+    return this.firestore.collection('coupons').doc(id).delete();
+  }
+
+  /* Requested exams */
+  getRequestedExams() {
+    return this.firestore.collection('requestexam').snapshotChanges();
+  }
+
+  addRequestedExam(data) {
+    return this.firestore.collection('requestexam').add(data);
+  }
+
 
   /* USER COUPON */
 
   /* USER EXAMS
   exams that user has/have/is taking ...
-
+  
   userexams |
   */
 
-  addUserexam(data){
+  addUserexam(data) {
     return this.firestore.collection('userexams').add(data);
   }
-  getUserexam(userexamId){
-    return this.firestore.doc('userexams/'+userexamId).valueChanges();
+  getUserexam(userexamId) {
+    return this.firestore.doc('userexams/' + userexamId).valueChanges();
   }
-  deleteUserexam(userexamId){
-    return this.firestore.doc('userexams/'+userexamId).delete();
+  deleteUserexam(userexamId) {
+    return this.firestore.doc('userexams/' + userexamId).delete();
   }
-  updateUserexam(userexamId,data){
-    return this.firestore.doc('userexams/'+userexamId).update(data);
+  updateUserexam(userexamId, data) {
+    return this.firestore.doc('userexams/' + userexamId).update(data);
   }
 
-  getUserexamTakenCompleted(userid){
+  getUserexamTakenCompleted(userid) {
     return this.firestore.collection('userexams', ref => ref.where('userId', '==', userid).where('status', '==', 'complete')).snapshotChanges();
   }
 

@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ForgotPasswordPage } from '../forgot-password/forgot-password';
-import { ExamPreferencesPage } from '../exam-preferences/exam-preferences';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { ForgotPasswordPage } from "../forgot-password/forgot-password";
+import { ExamPreferencesPage } from "../exam-preferences/exam-preferences";
 
 // Importing Providers
-import {ApiProvider} from '../../providers/api/api';
-import {AuthProvider} from '../../providers/auth/auth';
-
-
+import { ApiProvider } from "../../providers/api/api";
+import { AuthProvider } from "../../providers/auth/auth";
+import { HomeExamsPage } from "../home-exams/home-exams";
 
 /**
  * Generated class for the LoginPage page.
@@ -18,54 +17,64 @@ import {AuthProvider} from '../../providers/auth/auth';
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: "page-login",
+  templateUrl: "login.html"
 })
 export class LoginPage {
+  user = {
+    name: "",
+    email: "",
+    password: ""
+  };
 
-  user={
-    name:'',
-    email:'',
-    password:''
+  err = "";
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private auth: AuthProvider,
+    private api: ApiProvider
+  ) {
+    if (localStorage.getItem("uid")) {
+      this.navCtrl.push(ExamPreferencesPage);
+    }
   }
-
-  err='';
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-              private auth: AuthProvider, private api: ApiProvider) {
-                if(localStorage.getItem('uid')) {
-                  this.navCtrl.push(ExamPreferencesPage);
-                }
-              }
 
   // ionViewDidLoad() {
   //   console.log('ionViewDidLoad LoginPage');
   // }
-  ClickToForgotPage(){
+  ClickToForgotPage() {
     this.navCtrl.push(ForgotPasswordPage);
   }
-  ClickToRegister(){
-    this.navCtrl.push('RegisterPage');
+  ClickToRegister() {
+    this.navCtrl.push("RegisterPage");
   }
-  ClickToLogin(){
+  ClickToLogin() {
     // console.log('Login Clicked');
     // this.navCtrl.push(ExamsPage);
-    if(this.user.email !== '' && this.user.password !== ''){
-      this.auth.login(this.user.email, this.user.password).then(resp=>{
-        console.log(resp);
-        // localStorage.setItem('data',resp.user.displayName);
-        this.auth.saveToken(resp.user.uid);
-        this.api.updateStudent(localStorage.getItem('uid'), {lastLogin:new Date()}).then(response=>{
-         // this.router.navigate(['/dashboard']);
-         this.navCtrl.push(ExamPreferencesPage);
-        })
-      },err => this.showErr(err.message))
+    if (this.user.email !== "" && this.user.password !== "") {
+      this.auth.login(this.user.email, this.user.password).then(
+        resp => {
+          console.log(resp);
+          // localStorage.setItem('data',resp.user.displayName);
+          this.auth.saveToken(resp.user.uid);
+          this.api
+            .updateStudent(localStorage.getItem("uid"), {
+              lastLogin: new Date()
+            })
+            .then(response => {
+              // this.router.navigate(['/dashboard']);
+              this.navCtrl.push(HomeExamsPage);
+            });
+        },
+        err => this.showErr(err.message)
+      );
     }
     //this.navCtrl.push()
   }
 
-  showErr(msg){
+  showErr(msg) {
     this.err = msg;
-    setTimeout(()=> this.err = '' ,3000);
+    setTimeout(() => (this.err = ""), 3000);
   }
 }
