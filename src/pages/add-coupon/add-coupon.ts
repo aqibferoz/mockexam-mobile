@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomeExamsPage } from '../home-exams/home-exams';
 
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 // Providers
 import { ApiProvider } from '../../providers/api/api';
@@ -27,64 +27,74 @@ export class AddCouponPage {
   coupons: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private api: ApiProvider, private auth: AuthProvider) {
+    private api: ApiProvider, private auth: AuthProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddCouponPage');
     this.api.getStudent(this.auth.getToken())
-    .subscribe(resp => {
-      this.user = resp;
-    });
+      .subscribe(resp => {
+        this.user = resp;
+      });
 
-  this.api.getCoupons().pipe(map(
-    list => {
-      return list.map(
-        items => {
-          const data = items.payload.doc.data();
-          const id = items.payload.doc.id;
-          return { id, ...data }
-        }
-      )
-    }
-  )).subscribe( resp => {
-    this.coupons = resp;
-  })
+    this.api.getCoupons().pipe(map(
+      list => {
+        return list.map(
+          items => {
+            const data = items.payload.doc.data();
+            const id = items.payload.doc.id;
+            return { id, ...data }
+          }
+        )
+      }
+    )).subscribe(resp => {
+      this.coupons = resp;
+    })
 
   }
 
   addCoupon() {
+    if (this.couponId == null) {
+      console.log('please fill the field');
+    } else {
+      this.api.getCouponWithId(this.couponId)
+        .subscribe(resp => {
+          if (resp.length <= 0) {
+            console.log("invalid coupon")
+          }
+          else {
+            this.cId = resp;
+            console.log(this.cId);
+            if (this.couponId === this.cId[0].couponId) {
 
-    this.api.getCouponWithId(this.couponId)
-      .subscribe(resp => {
-        this.cId = resp;
-        console.log(this.cId);
-        if (this.couponId === this.cId[0].couponId) {
+              this.api.updateStudent(this.auth.getToken(), { balance: this.cId[0].amount + this.user.balance })
+                .then(
+                  () => {
+                    let c = this.coupons.filter(element => element.couponId === this.cId[0].couponId);
+                    this.api.removeCoupon(c[0].id)
+                      .then(
+                        () => {
+                          console.log('Coupon Removed');
+                        }
+                      );
+                  }
+                )
 
-          this.api.updateStudent(this.auth.getToken(), {balance: this.cId[0].amount+this.user.balance})
-          .then(
-            () => {
-              let c = this.coupons.filter(element => element.couponId === this.cId[0].couponId);
-              this.api.removeCoupon(c[0].id)
-              .then(
-                () => {
-                  console.log('Coupon Removed');
-                }
-              );
             }
-          )
+          }
+        })
 
-        }
-      })
 
+
+    }
 
   }
 
 
-  goBack(){
+  goBack() {
     this.navCtrl.push(HomeExamsPage);
   }
-  gotoNextField(nextElement){
+  gotoNextField(nextElement) {
     nextElement.setFocus();
-}
+  }
 }

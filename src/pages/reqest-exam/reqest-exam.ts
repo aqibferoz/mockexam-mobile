@@ -67,32 +67,5 @@ export class ReqestExamPage {
   ClickToExamsPage() {
     this.navCtrl.push(ExamsPage)
   }
-  // popUp() {
-  //   let alert = this.alertCtrl.create();
-  //   alert.setTitle('Exam Category');
 
-  //   alert.addInput({
-  //     type: 'radio',
-  //     label: 'Medical',
-  //     value: 'blue',
-  //     checked: true
-  //   });
-
-  //   alert.addInput({
-  //     type: 'radio',
-  //     label: 'Engineering',
-  //     value: 'blue',
-  //     // checked: true
-  //   });
-
-
-  //   alert.addButton({
-  //     text: 'Okay!',
-  //     handler: data => {
-  //       // this.testRadioOpen = false;
-  //       // this.testRadioResult = data;
-  //     }
-  //   });
-  //   alert.present();
-  // }
 }

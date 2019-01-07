@@ -95,7 +95,7 @@
 
     <!-- Exams -->
 
-    <ion-list *ngSwitchCase="'exams'" no-linesv>
+    <ion-list *ngSwitchDefault no-linesv>
       <ion-grid>
         <ion-row>
           <ion-col ion-col text-left no-padding col-5 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -152,7 +152,7 @@
       </ion-footer>
     </ion-list>
 
-    <ion-list *ngSwitchDefault no-lines>
+    <ion-list *ngSwitchCase="'profile'" no-lines>
       <ion-grid id="name">
         <ion-row>
           <ion-col ion-col text-center no-padding col-4 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
