@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddBalancePage } from '../add-balance/add-balance';
 import { HomeExamsPage } from '../home-exams/home-exams';
+import { AddCouponPage } from '../add-coupon/add-coupon';
 
 /**
  * Generated class for the BalanceTransactionsPage page.
@@ -27,6 +28,6 @@ goBack(){
 this.navCtrl.push(HomeExamsPage)
 }
 addBalance(){
-  this.navCtrl.push(AddBalancePage)
+  this.navCtrl.push(AddCouponPage)
 }
 }
