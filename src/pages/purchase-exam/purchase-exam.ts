@@ -4,6 +4,7 @@ import { AddBalancePage } from '../add-balance/add-balance';
 import { AddCouponPage } from '../add-coupon/add-coupon';
 import { ApiProvider } from '../../providers/api/api';
 import { AuthProvider } from '../../providers/auth/auth';
+import { map } from 'rxjs/operators';
 
 /**
  * Generated class for the PurchaseExamPage page.
@@ -26,12 +27,25 @@ export class PurchaseExamPage {
     private auth: AuthProvider) {
   }
   student: any;
+  mockExamId;
+  mock;
+  mocks;
+  purchaseButton: boolean = false;
   ionViewDidLoad() {
+    this.mockExamId = this.navParams.get('mockId');
+    console.log(this.mockExamId);
     console.log('ionViewDidLoad PurchaseExamPage');
     this.api.getStudent(this.auth.getToken()).subscribe(resp => {
       this.student = resp;
       console.log(this.student);
     });
+    this.api.getMock(this.mockExamId).subscribe(res => {
+      console.log(res);
+      this.mock = res;
+      if (this.student.balance > this.mock.priceOfSeries) {
+        this.purchaseButton = true;
+      }
+    })
   }
   goAddBalance() {
     this.navCtrl.push(AddCouponPage)
