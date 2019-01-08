@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { ExamsPage } from '../exams/exams';
 import { ApiProvider } from '../../providers/api/api';
 import { map } from 'rxjs/operators';
@@ -21,9 +21,10 @@ export class ReqestExamPage {
   categorys: any;
   categoryName: string;
   examName: string;
+  toast:any;
   studentName: string;
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private alertCtrl: AlertController, private api: ApiProvider) {
+    private alertCtrl: AlertController, private api: ApiProvider, private toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -52,6 +53,12 @@ export class ReqestExamPage {
   requestExam() {
     if (this.categoryName == null && this.examName == null) {
       console.log('please fill all the fields');
+      this.toast = this.toastCtrl.create({
+        message: 'Please fill all the fields!',
+        duration: 3000,
+        position: 'bottom'
+      });
+      this.toast.present();
     }
     else {
       let e = {
