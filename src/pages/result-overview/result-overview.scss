@@ -11,15 +11,7 @@ page-result-overview {
         color: white !important;
         text-align: center !important;
     }
-    ion-icon{
-        font-size: 28px !important;
-        font-weight: 500 !important;
-        color:  white !important;
-        margin-top: 15px !important;
-    }
-    .back-button.show-back-button{
-        display: none !important;
-    }
+   
     p{
         font-size: 16px;
         font-weight: 100;
@@ -125,29 +117,47 @@ page-result-overview {
         background-color: white !important;
         padding: initial !important;
      }
-    // ion-avatar{
-    //     margin: auto !important;
-    // }
+    
     #name{
         background-color: #5F43AB !important;
     }
    
-    // .alert-button-group{
-    //     background: #5F43AB !important;
-    // }
-    // .alert-message{
-    //     font-size: 16px !important;
-    // }
-    // .alert-ios-button-background-color{
-    //     background: #5F43AB !important;
-    //     background-color: #5F43AB !important;
-    //     color: #5F43AB !important;
 
-    // }
-    // .alert-ios-button-background-color-activated{
-    //     background: #5F43AB !important;
-    //     background-color: #5F43AB !important;
-    //     color: #5F43AB !important;
 
-    // }
+
+
+    
+    .back-button{
+        display: initial !important;
+    }
+    .toolbar-title-md{
+        margin-left: -3rem  !important;
+        text-align: center !important;
+        }
+        .toolbar-title{
+            width: 100% !important;
+        }
+        .back-button-icon-md{
+            font-size: initial !important;
+        }
+        .back-button-icon-ios {
+            font-size: initial !important;
+        }
+        .bar-button-default-md,
+      .bar-button-clear-md-default,
+      .bar-button-md-default {
+        display: inline !important;
+        margin-top: 10px !important;
+    
+      }
+    
+      .bar-button-default-ios,
+      .bar-button-default.bar-button-ios-default,
+      .bar-button-clear-ios-default {
+        display: inline !important;
+        margin-top: 10px !important;
+    
+      }
+
+   
 }

@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { IonicPage, NavController, NavParams, LoadingController } from "ionic-angular";
 import { AddCouponPage } from "../add-coupon/add-coupon";
 import { BalanceTransactionsPage } from "../balance-transactions/balance-transactions";
 import { ExamsHistoryPage } from "../exams-history/exams-history";
@@ -34,6 +34,7 @@ export class HomeExamsPage {
   userPref = new Array();
   e: any;
   c: any;
+  loading: any;
   sname;
   //////////////////////////////////////////
 
@@ -41,8 +42,16 @@ export class HomeExamsPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private auth: AuthProvider,
-    private api: ApiProvider
+    private api: ApiProvider,
+    public loadingCtrl: LoadingController
   ) {
+
+    this.loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+
+    this.loading.present();
+
     // Get student to show on Profile page
     this.api.getStudent(this.auth.getToken()).subscribe(resp => {
       this.student = resp;
@@ -85,7 +94,6 @@ export class HomeExamsPage {
       )).subscribe(resp => {
         console.log(resp);
         this.mocks = resp;
-
       });
 
     this.api.getExams().pipe(map(
@@ -105,6 +113,7 @@ export class HomeExamsPage {
       }
     )).subscribe(resp => {
       this.categories = resp;
+      this.loading.dismiss();
       console.log(this.categories);
     });
     ///////////////////////////////////////////////////////////////////////////////

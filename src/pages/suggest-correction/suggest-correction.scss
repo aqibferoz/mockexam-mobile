@@ -6,12 +6,7 @@ page-suggest-correction {
         background-color: #5F43AB !important;
         height: 60px;
     }
-    ion-icon{
-        color: white;
-    padding-left: 0.2em;
-    padding-top: 0.5em;
-    font-size: 25px;
-    }
+    
     .title{
         text-align: center !important;
     }
@@ -47,9 +42,7 @@ page-suggest-correction {
     #para{
         margin-top: -2px !important;
     }
-    .back-button.show-back-button{
-        display: none !important;
-    }
+   
     .input{
         font-size: 10px !important;
     }
@@ -90,10 +83,7 @@ page-suggest-correction {
         background-color: #ccc;
     }
     
-    /* On mouse-over, add a grey background color */
-    .container:hover input ~ .checkmark {
-    }
-    
+   
     /* When the checkbox is checked, add a blue background */
     .container input:checked ~ .checkmark {
         background-color: #5F43AB;
@@ -111,8 +101,40 @@ page-suggest-correction {
         display: block;
     }
     
-    /* Style the checkmark/indicator */
-    .container .checkmark:after {
-       
+
+
+    
+    .back-button{
+        display: initial !important;
     }
+    .toolbar-title-md{
+        margin-left: -3rem  !important;
+        text-align: center !important;
+        }
+        .toolbar-title{
+            width: 100% !important;
+        }
+        .back-button-icon-md{
+            font-size: initial !important;
+        }
+        .back-button-icon-ios {
+            font-size: initial !important;
+        }
+        .bar-button-default-md,
+      .bar-button-clear-md-default,
+      .bar-button-md-default {
+        display: inline !important;
+        margin-top: 10px !important;
+    
+      }
+    
+      .bar-button-default-ios,
+      .bar-button-default.bar-button-ios-default,
+      .bar-button-clear-ios-default {
+        display: inline !important;
+        margin-top: 10px !important;
+    
+      }
+
+    
 }
