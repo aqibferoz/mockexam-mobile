@@ -37,8 +37,8 @@
 
             </ion-col> -->
     </ion-row>
-    <ion-item text-center style="background-color:#F4F4F4 !important" *ngIf="categorys">
-      <ion-label>Category</ion-label>
+    <ion-item text-left style="background-color:#F4F4F4 !important" *ngIf="categorys">
+      <ion-label text-left>Category</ion-label>
       <ion-select [(ngModel)]="examCategory" (ngModelChange)="onChangeMock($event)" name="examCategory">
         <ion-option text-left *ngFor="let i of categorys" [value]="i.categoryName" [selected]="i.categoryName == examCategory ? true : null">
           {{i.categoryName}}
@@ -49,7 +49,7 @@
     <ion-item text-center style="background-color:#F4F4F4 !important">
       <!---Input field email-->
 
-      <ion-input class="input" text-left type="text" placeholder="EXAM NAME" [(ngModel)]="examName" nane="examName"></ion-input>
+      <ion-input class="input" text-left type="text" placeholder="EXAM NAME" [(ngModel)]="examName" name="examName"></ion-input>
 
     </ion-item><br>
     <ion-row>
