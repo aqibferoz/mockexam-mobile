@@ -53,9 +53,7 @@ page-reqest-exam {
 
 
 
-    .back-button{
-        display: initial !important;
-    }
+    
     .toolbar-title-md{
         margin-left: -3rem  !important;
         text-align: center !important;
@@ -81,7 +79,7 @@ page-reqest-exam {
       .bar-button-default.bar-button-ios-default,
       .bar-button-clear-ios-default {
         display: inline !important;
-        margin-top: 10px !important;
+        margin-top: 5px !important;
     
       }
 
@@ -95,7 +93,7 @@ page-reqest-exam {
         // text-align: center !important;
         font-size: 10px !important;
         ::placeholder { 
-            color: rgb(109, 106, 106) !important;
+            color: rgb(46, 44, 44) !important;
             font-size: 14px !important;
 ;
           }

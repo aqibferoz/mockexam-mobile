@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { HomeExamsPage } from '../home-exams/home-exams';
 import { ApiProvider } from '../../providers/api/api';
 import { AuthProvider } from '../../providers/auth/auth';
@@ -19,8 +19,9 @@ import { AuthProvider } from '../../providers/auth/auth';
 export class ReportPage {
   student: any;
   report;
+  toast:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private api: ApiProvider, private auth: AuthProvider) {
+    private api: ApiProvider, private auth: AuthProvider, private toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -33,6 +34,13 @@ export class ReportPage {
   Report() {
     if (this.report == null) {
       console.log('please fill the field');
+
+      this.toast = this.toastCtrl.create({
+        message: 'Nothing is written in the report',
+        duration: 3000,
+        position: 'bottom'
+      });
+      this.toast.present();
     }
     else {
       let e = {
