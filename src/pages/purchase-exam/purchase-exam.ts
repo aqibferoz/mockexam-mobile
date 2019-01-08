@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AddBalancePage } from '../add-balance/add-balance';
+import { AddCouponPage } from '../add-coupon/add-coupon';
 
 /**
  * Generated class for the PurchaseExamPage page.
@@ -21,5 +23,10 @@ export class PurchaseExamPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PurchaseExamPage');
   }
-
+  goAddBalance(){
+    this.navCtrl.push(AddBalancePage)
+  }
+  goAddCoupon(){
+    this.navCtrl.push(AddCouponPage)
+  }
 }
