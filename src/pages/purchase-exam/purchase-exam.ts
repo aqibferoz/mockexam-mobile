@@ -56,16 +56,11 @@ export class PurchaseExamPage {
   proceed() {
     const confirm = this.alertCtrl.create({
       title: 'Congratulations',
-      message: "You havn't purchased the exam yet,",
+      message: "You have successfully purchased the exam. Start preparing the subject by taking the exam now.",
       buttons: [
+        
         {
-          text: 'Cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Buy now',
+          text: 'Take exam now',
           handler: () => {
             console.log('Agree clicked');
             this.navCtrl.push(PurchaseExamPage)
