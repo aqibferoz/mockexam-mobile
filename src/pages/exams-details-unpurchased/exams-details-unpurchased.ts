@@ -92,7 +92,7 @@ export class ExamsDetailsUnpurchasedPage {
             text: 'Buy now',
             handler: () => {
               console.log('Agree clicked');
-              this.navCtrl.push(PurchaseExamPage)
+              this.navCtrl.push(PurchaseExamPage, { mockId: this.mockId });
             }
           }
         ]
@@ -104,7 +104,9 @@ export class ExamsDetailsUnpurchasedPage {
 
 
   buyNow() {
-    this.navCtrl.push(PurchaseExamPage)
+    console.log("buynow");
+    console.log(this.mockId);
+
   }
   goBack() {
     this.navCtrl.push(HomeExamsPage);
