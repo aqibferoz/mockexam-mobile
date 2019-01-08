@@ -91,6 +91,7 @@ export class ExamsDetailsUnpurchasedPage {
             text: 'Buy now',
             handler: () => {
               console.log('Agree clicked');
+              this.navCtrl.push(PurchaseExamPage)
             }
           }
         ]
