@@ -40,9 +40,7 @@ export class ExamPreferencesPage {
   }
 
   ionViewDidLoad() {
-    if (!this.auth.getToken()) {
-      this.navCtrl.push(LoginPage);
-    }
+
     // console.log('ionViewDidLoad ExamPreferencesPage');
     // read current user from firebase
     this.api.getStudent(this.auth.getToken())

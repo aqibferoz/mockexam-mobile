@@ -50,18 +50,24 @@ export class ReqestExamPage {
     console.log(this.categoryName);
   }
   requestExam() {
-    let e = {
-      categoryName: this.categoryName,
-      examName: this.examName
+    if (this.categoryName == null && this.examName == null) {
+      console.log('please fill all the fields');
+    }
+    else {
+      let e = {
+        categoryName: this.categoryName,
+        examName: this.examName
+      }
+
+      this.api.addRequestedExam(e).then(
+        () => {
+          this.categoryName = null;
+          this.examName = null;
+          this.navCtrl.push(HomeExamsPage)
+        }
+      )
     }
 
-    this.api.addRequestedExam(e).then(
-      () => {
-        this.categoryName = null;
-        this.examName = null;
-        this.navCtrl.push(HomeExamsPage)
-      }
-    )
   }
 
   ClickToExamsPage() {
