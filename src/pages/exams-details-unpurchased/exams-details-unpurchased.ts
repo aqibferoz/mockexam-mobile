@@ -30,10 +30,9 @@ export class ExamsDetailsUnpurchasedPage {
   mockData: any;
   mocks: any;
   mock: any;
-
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private auth: AuthProvider, private api: ApiProvider, private alertCtrl: AlertController) {
-    ///////////////Teking Id from previous Page///////////////////////////
+    ///////////////Taking Id from previous Page///////////////////////////
     this.api.getStudent(this.auth.getToken())
       .subscribe(resp => {
         this.student = resp;
@@ -49,7 +48,7 @@ export class ExamsDetailsUnpurchasedPage {
         const id = a.payload.doc.id;
         this.mockData = data;
         this.examPurchased.filter(element => {
-          if (element === this.mockData.examId) {
+          if (element === this.mockData.mockId) {
             this.mockData.free = true;
           }
         })

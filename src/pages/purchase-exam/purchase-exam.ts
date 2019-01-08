@@ -5,6 +5,7 @@ import { AddCouponPage } from '../add-coupon/add-coupon';
 import { ApiProvider } from '../../providers/api/api';
 import { AuthProvider } from '../../providers/auth/auth';
 import { map } from 'rxjs/operators';
+import { ExamsDetailsUnpurchasedPage } from '../exams-details-unpurchased/exams-details-unpurchased';
 
 /**
  * Generated class for the PurchaseExamPage page.
@@ -29,7 +30,7 @@ export class PurchaseExamPage {
   student: any;
   mockExamId;
   mock;
-  mocks;
+  examPurchased = new Array();
   purchaseButton: boolean = false;
   ionViewDidLoad() {
     this.mockExamId = this.navParams.get('mockId');
@@ -42,7 +43,7 @@ export class PurchaseExamPage {
     this.api.getMock(this.mockExamId).subscribe(res => {
       console.log(res);
       this.mock = res;
-      if (this.student.balance > this.mock.priceOfSeries) {
+      if (this.student.balance >= this.mock.priceOfSeries) {
         this.purchaseButton = true;
       }
     })
@@ -58,16 +59,25 @@ export class PurchaseExamPage {
       title: 'Congratulations',
       message: "You have successfully purchased the exam. Start preparing the subject by taking the exam now.",
       buttons: [
-        
+
         {
           text: 'Take exam now',
           handler: () => {
             console.log('Agree clicked');
-            this.navCtrl.push(PurchaseExamPage)
+            this.examPurchased.push(this.mockExamId);
+            this.api.updateStudent(this.auth.getToken(), { examPurchased: this.examPurchased, balance: this.student.balance - this.mock.priceOfSeries })
+              .then(() => {
+                this.navCtrl.push(ExamsDetailsUnpurchasedPage, { passId: this.mockExamId });
+              })
+
+
           }
         }
       ]
     });
     confirm.present();
+    // this.navCtrl.push(ExamsDetailsUnpurchasedPage, { mockId: this.mockExamId });
+
+
   }
 }
