@@ -30,7 +30,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private auth: AuthProvider, private api: ApiProvider, public loadingCtrl: LoadingController) {
     if (localStorage.getItem('uid')) {
-      this.navCtrl.push(HomeExamsPage);
+      this.navCtrl.setRoot(HomeExamsPage);
     }
   }
 
@@ -64,7 +64,7 @@ export class LoginPage {
         this.api.updateStudent(localStorage.getItem('uid'), { lastLogin: new Date() }).then(response => {
           // this.router.navigate(['/dashboard']);
           loading.dismiss();
-          this.navCtrl.push(HomeExamsPage);
+          this.navCtrl.setRoot(HomeExamsPage);
         })
       }, err => this.showErr(err.message))
         .catch(err => {

@@ -1,43 +1,43 @@
-
 <ion-header>
 
     <ion-navbar transparent>
         <!-- <ion-icon name="arrow-round-back" (click) = "goBack()"></ion-icon> -->
-          <ion-title>Exam <b>History</b></ion-title>
-      </ion-navbar>
-  
-  </ion-header>
-  
-  
-  <ion-content padding>
-      <ion-grid>
-     
-          <ion-row>
+        <ion-title>Exam <b>History</b></ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="userexams && userexamsIncomplete">
+    <ion-grid *ngIf="userexams">
+
+        <ion-row *ngFor="let item of userexams">
             <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-      
+
             </ion-col>
             <ion-col ion-col text-center no-padding col-10 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                <h1 style="margin-top: 5px !important;">FCPS Part 1 - Medicine</h1>
+                <h1 style="margin-top: 5px !important;">{{item.examName}} - {{item.chapterName}}</h1>
                 <h3>Completed on</h3>
-                <button class="btn1" ion-button (click)= "goResultOverviewPage()">View Result</button>
+                <button class="btn1" ion-button (click)="viewresult(item.id)">View Result</button>
             </ion-col>
-          </ion-row>
-          <hr>
-          <ion-row>
-              <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        
-              </ion-col>
-              <ion-col ion-col text-center no-padding col-10 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-                  <h1 style="margin-top: 5px !important;">FCPS Part 1 - Medicine</h1>
-                  <h3>Completed on</h3>
-                  <button class="btn2" ion-button (click)= "alertBox()">Resume now</button>
-              </ion-col>
-            </ion-row>
-      
-            
-                  
-      
-        </ion-grid>
-      
-  </ion-content>
-  
+        </ion-row>
+    </ion-grid>
+    <hr>
+    <ion-grid *ngIf="userexamsIncomplete">
+        <ion-row *ngFor="let item of userexamsIncomplete">
+            <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+            </ion-col>
+            <ion-col ion-col text-center no-padding col-10 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <h1 style="margin-top: 5px !important;">{{item.examName}} - {{item.chapterName}}</h1>
+                <h3>Complete list of transactions made to Your account</h3>
+                <button class="btn2" ion-button (click)="alertBox()">Resume now</button>
+            </ion-col>
+        </ion-row>
+
+
+
+
+    </ion-grid>
+
+</ion-content>

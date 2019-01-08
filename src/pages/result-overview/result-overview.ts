@@ -30,6 +30,7 @@ export class ResultOverviewPage {
     private api: ApiProvider) {
     this.userExam = this.navParams.get('userexamId');
     console.log(this.userExam);
+
   }
 
   ionViewDidLoad() {

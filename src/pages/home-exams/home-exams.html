@@ -14,7 +14,7 @@
   <!-- </ion-toolbar> -->
 </ion-header>
 
-<ion-content padding *ngIf="mocks">
+<ion-content padding>
   <div [ngSwitch]="requests">
     <!-- Home -->
 
@@ -142,7 +142,7 @@
           <ion-row>
             <ion-col ion-col text-center no-padding col-12 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               <p id="paragraph">You can always add more exams.</p>
-              <button class="btn2" ion-button (click)="ClickToExamsPreferencesPage()">
+              <button class="btn2" ion-button (click)="goExamPreferencesPage()">
                 Add More Exams
               </button>
             </ion-col>
