@@ -92,7 +92,13 @@ page-reqest-exam {
 
 
     .input{
+        // text-align: center !important;
         font-size: 10px !important;
+        ::placeholder { 
+            color: rgb(109, 106, 106) !important;
+            font-size: 14px !important;
+;
+          }
     }
     .alert-button-group{
         background: #5F43AB !important;
