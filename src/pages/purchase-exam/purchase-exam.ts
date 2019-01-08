@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { AddBalancePage } from '../add-balance/add-balance';
 import { AddCouponPage } from '../add-coupon/add-coupon';
 import { ApiProvider } from '../../providers/api/api';
@@ -24,6 +24,7 @@ export class PurchaseExamPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private alertCtrl: AlertController,
+    private toastCtrl: ToastController,
     private api: ApiProvider,
     private auth: AuthProvider) {
   }
@@ -56,26 +57,34 @@ export class PurchaseExamPage {
   }
   proceed() {
     const confirm = this.alertCtrl.create({
-      title: 'Congratulations',
-      message: "You have successfully purchased the exam. Start preparing the subject by taking the exam now.",
+      title: 'Are you sure?',
       buttons: [
-
         {
-          text: 'Take exam now',
+          text: 'Okay',
           handler: () => {
-            console.log('Agree clicked');
             this.examPurchased.push(this.mockExamId);
             this.api.updateStudent(this.auth.getToken(), { examPurchased: this.examPurchased, balance: this.student.balance - this.mock.priceOfSeries })
               .then(() => {
+                const success = this.toastCtrl.create({
+                  message: "You have successfully purchased the exam. Start preparing the subject by taking the exam now.",
+                  duration: 6000,
+                  position: 'bottom'
+                });
+                success.present();
                 this.navCtrl.push(ExamsDetailsUnpurchasedPage, { passId: this.mockExamId });
               })
-
-
+          }
+        },
+        {
+          text: 'Cancel',
+          handler: () => {
+            console.log('Cancel clicked');
           }
         }
       ]
-    });
+    })
     confirm.present();
+
     // this.navCtrl.push(ExamsDetailsUnpurchasedPage, { mockId: this.mockExamId });
 
 
