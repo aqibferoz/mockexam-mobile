@@ -33,6 +33,7 @@ export class HomeExamsPage {
   categories: any;
   userPref = new Array();
   e: any;
+  c: any;
   sname;
   //////////////////////////////////////////
 
@@ -54,53 +55,58 @@ export class HomeExamsPage {
   ionViewDidLoad() {
     console.log("ionViewDidLoad HomeExamsPage");
     ///////////// Code to display Exams which are added from Preference////////////
-    this.api
-      .getMocks()
-      .pipe(
-        map(actions =>
-          actions.map(a => {
-            const data = a.payload.doc.data();
-            const id = a.payload.doc.id;
-            this.e = data;
-            //get exams
-            let preference = false;
-            let found = this.userPref.find(element => {
-              return this.e.examId === element;
-            });
-            if (found) {
-              preference = true;
-            }
-            return { id, preference, ...data };
-          })
-        )
-      )
-      .subscribe(resp => {
+    this.api.getCategorys().pipe(map(
+      list => {
+        return list.map(item => {
+          return { id: item.payload.doc.id, ...item.payload.doc.data() }
+        })
+      }
+    )).subscribe(
+      c => {
+        this.c = c;
+      }
+    )
+
+    this.api.getMocks().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        this.e = data;
+        //get exams
+        let preference = false;
+        let found = this.userPref.find(element => {
+          return this.e.examId === element;
+        });
+        if (found) {
+          preference = true;
+        }
+        return { id, preference, ...data };
+      })
+      )).subscribe(resp => {
+        console.log(resp);
         this.mocks = resp;
+
       });
 
-    this.api
-      .getExams()
-      .pipe(
-        map(list => {
-          return list.map(items => {
+    this.api.getExams().pipe(map(
+      list => {
+        return list.map(
+          items => {
             const data = items.payload.doc.data();
             const id = items.payload.doc.id;
-            let found = this.userPref.find(element => {
-              return element === id;
-            });
+            let found = this.userPref.find(element => { return element === id; });
             let isPresent = false;
             if (found) {
               isPresent = true;
             }
             return { id, isPresent, ...data };
-          });
-        })
-      )
-      .subscribe(resp => {
-        this.categories = resp;
-        console.log(this.categories);
-      });
-
+          }
+        )
+      }
+    )).subscribe(resp => {
+      this.categories = resp;
+      console.log(this.categories);
+    });
     ///////////////////////////////////////////////////////////////////////////////
   }
   goExam(examId) {

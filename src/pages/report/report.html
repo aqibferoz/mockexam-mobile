@@ -37,10 +37,10 @@
                 <ion-item text-center style="background-color: #f4f4f4 !important">
                     <!---Input field email-->
 
-                    <ion-input class="input" text-left type="text" placeholder="REPORT"></ion-input>
+                    <ion-input class="input" name="report" [(ngModel)]="report" text-left type="text" placeholder="REPORT"></ion-input>
 
                 </ion-item><br><br>
-                <button class="btn2" ion-button (click)="goToProfilePage()">Submit</button>
+                <button class="btn2" ion-button (click)="Report()">Submit</button>
 
             </ion-col>
 
