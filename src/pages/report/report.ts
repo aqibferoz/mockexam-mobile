@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomeExamsPage } from '../home-exams/home-exams';
+import { ApiProvider } from '../../providers/api/api';
+import { AuthProvider } from '../../providers/auth/auth';
 
 /**
  * Generated class for the ReportPage page.
@@ -15,17 +17,19 @@ import { HomeExamsPage } from '../home-exams/home-exams';
   templateUrl: 'report.html',
 })
 export class ReportPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  student: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private api: ApiProvider, private auth: AuthProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReportPage');
+    this.student = localStorage.getItem('name');
   }
-  goBack(){
+  goBack() {
     this.navCtrl.push(HomeExamsPage)
   }
-  goToProfilePage(){
+  goToProfilePage() {
     this.navCtrl.push(HomeExamsPage)
   }
 }
