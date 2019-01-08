@@ -185,12 +185,16 @@ export class ApiProvider {
     return this.firestore.collection('requestexam').add(data);
   }
 
+  addReport(data) {
+    return this.firestore.collection('report').add(data);
+  }
+
 
   /* USER COUPON */
 
   /* USER EXAMS
   exams that user has/have/is taking ...
-  
+
   userexams |
   */
 

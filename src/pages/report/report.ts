@@ -18,6 +18,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class ReportPage {
   student: any;
+  report;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private api: ApiProvider, private auth: AuthProvider) {
   }
@@ -29,7 +30,23 @@ export class ReportPage {
   goBack() {
     this.navCtrl.push(HomeExamsPage)
   }
-  goToProfilePage() {
-    this.navCtrl.push(HomeExamsPage)
+  Report() {
+    if (this.report == null) {
+      console.log('please fill the field');
+    }
+    else {
+      let e = {
+        categoryName: this.report,
+        studentName: this.student,
+        userId: localStorage.getItem('uid')
+      }
+
+      this.api.addReport(e).then(
+        () => {
+          this.report = null;
+          this.navCtrl.push(HomeExamsPage)
+        }
+      )
+    }
   }
 }
