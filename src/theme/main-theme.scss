@@ -93,6 +93,7 @@ $palettes: (
     ),
     // Used for text colors in all screens
     textColors: (
+
       primary: #FFFFFF,
       secondary: #8E8E93,
       accent : #2ABDCE,
@@ -100,6 +101,7 @@ $palettes: (
       accentLight: #30384C,
       secondaryLight: #95989A,
       secondaryDark: #4D4D4D,
+      muchDark: black,
       Dark: rgb(12, 11, 11)
     ),
     // Used for gradient
@@ -1035,7 +1037,7 @@ $alert-ios-radio-border-color-on: theme-colors('textColors', 'accent') !importan
 
 $alert-ios-radio-label-text-color: theme-colors('textColors', 'accentLight');
 $alert-ios-radio-label-text-color-checked: theme-colors('textColors', 'accent') !important;
-
+$alert-md-message-text-color: theme-colors('textColors', 'muchDark') !important;
 .alert-title {
   color: theme-colors('textColors', 'accentLight') !important;
   font-weight: bold;

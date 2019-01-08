@@ -3,9 +3,7 @@
 
   <div class="myOverlay">
     <ion-icon id="icon" name="arrow-round-back" (click)="goBack()"></ion-icon>
-    <ion-title
-      ><b>{{ examName }}</b></ion-title
-    >
+    <ion-title><b>{{ examName }}</b></ion-title>
     <p class="details">Some other details about exams</p>
   </div>
 </ion-header>
@@ -30,51 +28,18 @@
         <li>10 full length and full syllabus mock tests</li>
       </ul>
 
-      <ion-grid>
+      <!-- <ion-grid>
         <ion-row>
-          <ion-col
-            ion-col
-            text-left
-            no-padding
-            col-1
-            col-sm-1
-            col-md-1
-            offset-lg-3
-            col-lg-6
-            offset-xl-3
-            col-xl-6
-          >
+          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           </ion-col>
 
-          <ion-col
-            ion-col
-            text-center
-            no-padding
-            col-4
-            col-sm-10
-            col-md-10
-            offset-lg-3
-            col-lg-6
-            offset-xl-3
-            col-xl-6
-          >
+          <ion-col ion-col text-center no-padding col-4 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
             <button class="btn2" ion-button>Next</button>
           </ion-col>
-          <ion-col
-            ion-col
-            text-left
-            no-padding
-            col-1
-            col-sm-1
-            col-md-1
-            offset-lg-3
-            col-lg-6
-            offset-xl-3
-            col-xl-6
-          >
+          <ion-col ion-col text-left no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           </ion-col>
         </ion-row>
-      </ion-grid>
+      </ion-grid> -->
     </ion-list>
 
     <ion-list *ngSwitchCase="'Content'" no-lines>
@@ -82,51 +47,14 @@
         <ion-grid *ngIf="mocks">
           <ul *ngFor="let x of mocks">
             <ion-row (click)="goExamInstructionsPage(x.id, x.free)">
-              <ion-col
-                ion-col
-                text-center
-                no-padding
-                col-6
-                col-sm-1
-                col-md-1
-                offset-lg-3
-                col-lg-6
-                offset-xl-3
-                col-xl-6
-              >
+              <ion-col ion-col text-center no-padding col-6 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
                 <li>{{ x?.mockExamName }}</li>
               </ion-col>
 
-              <ion-col
-                ion-col
-                text-center
-                no-padding
-                col-4
-                col-sm-1
-                col-md-1
-                offset-lg-3
-                col-lg-6
-                offset-xl-3
-                col-xl-6
-              >
+              <ion-col ion-col text-center no-padding col-4 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
               </ion-col>
-              <ion-col
-                ion-col
-                text-center
-                col-2
-                col-sm-1
-                col-md-1
-                offset-lg-3
-                col-lg-6
-                offset-xl-3
-                col-xl-6
-              >
-                <i
-                  class="fa"
-                  [class.fa-lock]="!x.free"
-                  [class.fa-arrow-right]="x.free"
-                  aria-hidden="true"
-                ></i>
+              <ion-col ion-col text-center col-2 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <i class="fa" [class.fa-lock]="!x.free" [class.fa-arrow-right]="x.free" aria-hidden="true"></i>
               </ion-col>
             </ion-row>
           </ul>
