@@ -40,7 +40,8 @@
         <h1><strong>Payment Options</strong></h1>
         <h2>Pay with balance</h2>
         <h2>Rs.{{student?.balance}}</h2>
-        <h3>You don't have sufficient balance in your account to purchase this item.Please add balance to your
+        <h3 *ngIf="!purchaseButton">You don't have sufficient balance in your account to purchase this item.Please add
+          balance to your
           mockexams account and then try again.</h3>
       </ion-col>
       <ion-col ion-col text-center no-padding col-1 col-sm-3 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
@@ -52,7 +53,7 @@
 
       </ion-col>
       <ion-col ion-col text-center no-padding col-10 col-sm-10 col-md-10 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <button class="btn1" ion-button (click)="goAddBalance()">Add Balance</button>
+        <button *ngIf="!purchaseButton" class="btn1" ion-button (click)="goAddBalance()">Add Balance</button>
         <button *ngIf="purchaseButton" class="btn1" ion-button (click)="proceed()">Proceed</button>
 
       </ion-col>
