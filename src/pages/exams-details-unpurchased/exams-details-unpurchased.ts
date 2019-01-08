@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ExamInstructionsPage } from '../exam-instructions/exam-instructions';
 import { PurchaseExamPage } from '../purchase-exam/purchase-exam';
 
@@ -32,7 +32,7 @@ export class ExamsDetailsUnpurchasedPage {
   mock: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private auth: AuthProvider, private api: ApiProvider) {
+    private auth: AuthProvider, private api: ApiProvider, private alertCtrl: AlertController) {
       ///////////////Teking Id from previous Page///////////////////////////
       this.api.getStudent(this.auth.getToken())
       .subscribe(resp => {
@@ -77,6 +77,25 @@ export class ExamsDetailsUnpurchasedPage {
       console.log(mockId);
     this.navCtrl.push(ExamInstructionsPage ,{mockId: mockId} )
     } else {
+      const confirm = this.alertCtrl.create({
+        title: 'Purchase Exam',
+        message: "You havn't purchased the exam yet,",
+        buttons: [
+          {
+            text: 'Cancel',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          },
+          {
+            text: 'Buy now',
+            handler: () => {
+              console.log('Agree clicked');
+            }
+          }
+        ]
+      });
+      confirm.present();
       console.log('Purchase the exam first!');
     }
   }
